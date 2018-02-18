@@ -1,0 +1,30 @@
+baseurl = "https://d5.work/"
+languageCode = "en-us"
+title = "D5"
+theme = "classic"
+googleAnalytics = ""
+ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
+preserveTaxonomyNames = true
+footnotereturnlinkcontents = "↩"
+paginate = 1
+[permalinks]
+    post = "/posts/:slug/"
+[[menu.main]]
+    name = "Posts"
+    url = "/posts/"
+    weight = 1
+[[menu.main]]
+    name = "Categories"
+    url = "/categories/"
+    weight = 2
+[[menu.main]]
+    name = "Tags"
+    url = "/tags/"
+    weight = 3
+[[menu.feed]]
+    name = "RSS"
+    url = "/index.xml"
+
+[params]
+    description = "Write OR Kneel"
+    footer = "~/[i@d5.work](mailto:i@d5.work)"
