@@ -24,7 +24,7 @@
 <hr class="hr0" />
 <h3 id="recent-posts">More posts</h3>
 <ul>
-  {{ range first 5 (after 1 .Data.Pages.ByPublishDate) }}
+  {{ range first 5 (after 1 .Data.Pages.ByDate.Reverse) }}
   <li>
     <span class="date">{{ .Date.Format "2006/01/02" }}</span>
     <a href="{{ .URL }}">{{ .Title }}</a>

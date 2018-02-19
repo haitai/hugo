@@ -1,1 +1,1 @@
-Another blog.
+Hugo static blog generator.

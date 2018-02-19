@@ -26,5 +26,5 @@ paginate = 1
     url = "/index.xml"
 
 [params]
-    description = "Write OR Kneel"
+    description = ""
     footer = "~/[i@d5.work](mailto:i@d5.work)"
