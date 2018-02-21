@@ -13,7 +13,7 @@ output:
     toc: true
 
     */
-
+html,body,.mainer{height: 100%}
 #TableOfContents, #TOC {
   border: 1px solid #eee;
   border-radius: 5px;
@@ -33,7 +33,7 @@ output:
 }
 .terms { font-size: .9em; }
 .menu { text-align: center; }
-footer,, .article-meta {text-align: left;}
+footer, .article-meta {text-align: left;}
 .title { font-size: 1.1em; }
 footer a { text-decoration: none; }
 
@@ -59,7 +59,8 @@ header,footer {
     background: #D12F2E;
     color: #fff
 }
-
+footer{    line-height: 1.75rem; 
+    margin-top:-1.75rem; }
 header ul,footer ul,
 header ol,footer ol {
     margin: 0;
@@ -109,7 +110,9 @@ th, td { padding: 5px; }
 tr:nth-child(even) { background: #eee }
 li{}
 ul{margin-left: 0px; padding-left: 20px;}
-.mainer{padding: 0 5px}
+.mainer{height:auto;min-height:100%; _height:100%;}
+.main { padding:0 8px 1.75rem 8px; }
+
 .notfound{line-height: 100%}
 ::selection {
     background:#D12F2E; 

@@ -7,7 +7,28 @@
     <link rel="stylesheet" href="{{ "/css/style.css" | relURL }}" />
     <link rel="stylesheet" href="{{ "/css/fonts.css" | relURL }}" />
     <meta name="theme-color" content="#D12F2E" />
-    {{ partial "head_custom.html" . }}
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
   </head>
-
   <body>
+  <div class="mainer">
+    <header>
+    <nav>
+      <ul>
+        {{ $title := lower .Title }}
+        {{ $section := lower .Section }}
+        <li class="pull-left {{ if .IsHome }}current{{ end }}">
+          /<a href="{{ .Site.BaseURL }}">{{ .Site.Title}}/首页</a>
+        </li>
+        {{ $aurl :=.URL }}
+        {{ range .Site.Menus.main }}
+        {{ $name := lower .Name }}
+        <li class="pull-left {{ if eq .URL $aurl }}current{{ else if eq $section $name }}current{{ else if eq $title (pluralize $name) }}current{{ end }}">
+          /<a href="{{ .URL }}">{{ lower .Name }} </a>
+        </li>
+        {{end}}
+      </ul>
+    </nav>
+  </header>
+  <div class="main">
