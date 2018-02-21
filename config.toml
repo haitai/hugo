@@ -10,21 +10,21 @@ paginate = 1
 [permalinks]
     post = "/posts/:slug/"
 [[menu.main]]
-    name = "Posts"
+    name = "文章"
     url = "/posts/"
     weight = 1
 [[menu.main]]
-    name = "Categories"
+    name = "分类"
     url = "/categories/"
     weight = 2
 [[menu.main]]
-    name = "Tags"
+    name = "标签"
     url = "/tags/"
     weight = 3
 [[menu.feed]]
-    name = "RSS"
+    name = "订阅"
     url = "/index.xml"
 
 [params]
     description = ""
-    footer = "~/[i@d5.work](mailto:i@d5.work)"
+    footer = "/[联系](mailto:i@d5.work)"

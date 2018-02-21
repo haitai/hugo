@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    <title>{{ if eq .URL "/" }}首页{{ else if eq .URL "/tags/" }}标签{{ else if eq .URL "/categories/" }}分类{{ else }}{{ .Title }}{{ end }} | {{ .Site.Title }}</title>
     <link rel="stylesheet" href="{{ "/css/style.css" | relURL }}" />
     <link rel="stylesheet" href="{{ "/css/fonts.css" | relURL }}" />
     <meta name="theme-color" content="#D12F2E" />
