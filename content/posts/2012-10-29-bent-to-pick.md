@@ -5,7 +5,7 @@ type: post
 date: 2012-10-29T13:48:02+00:00
 url: /posts/bent-to-pick/
 categories:
-  - Uncategorized
+  - 未分类
 
 ---
 在论述“时间就是金钱”的时候，某人引用过这样一个故事：

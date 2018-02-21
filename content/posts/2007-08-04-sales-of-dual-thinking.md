@@ -5,7 +5,7 @@ type: post
 date: 2007-08-03T23:14:00+00:00
 url: /posts/sales-of-dual-thinking/
 categories:
-  - Uncategorized
+  - 未分类
 tags:
   - story
 

@@ -5,7 +5,7 @@ type: post
 date: 2013-03-27T13:58:13+00:00
 url: /posts/glory-days/
 categories:
-  - Uncategorized
+  - 未分类
 tags:
   - story
 

@@ -5,7 +5,7 @@ type: post
 date: 2010-06-22T03:41:04+00:00
 url: /posts/poles-apart/
 categories:
-  - Uncategorized
+  - 未分类
 tags:
   - story
 

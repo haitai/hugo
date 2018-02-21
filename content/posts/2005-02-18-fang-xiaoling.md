@@ -5,7 +5,7 @@ type: post
 date: 2005-02-18T02:24:00+00:00
 url: /posts/fang-xiaoling/
 categories:
-  - Uncategorized
+  - 未分类
 tags:
   - story
 

@@ -5,7 +5,7 @@ type: post
 date: 2013-04-15T14:00:18+00:00
 url: /posts/clothing-city-kidnapping/
 categories:
-  - Uncategorized
+  - 未分类
 tags:
   - story
 

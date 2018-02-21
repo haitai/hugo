@@ -5,7 +5,7 @@ type: post
 date: 2015-01-14T08:32:55+00:00
 url: /posts/dai-shu-ri-ji/
 categories:
-  - Uncategorized
+  - 未分类
 
 ---
 #### 5月9日，星期四。晴，夜晚雷阵雨。

@@ -5,7 +5,7 @@ type: post
 date: 2005-04-02T20:56:00+00:00
 url: /posts/traffic-jam/
 categories:
-  - Uncategorized
+  - 未分类
 tags:
   - story
 

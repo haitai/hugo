@@ -5,7 +5,7 @@ type: post
 date: 2005-02-25T02:13:00+00:00
 url: /posts/wang-xiaobo-2/
 categories:
-  - Uncategorized
+  - 未分类
 tags:
   - story
 

@@ -1,6 +1,6 @@
 baseurl = "https://d5.work/"
 languageCode = "en-us"
-title = "D5"
+title = "狄无"
 theme = "classic"
 googleAnalytics = ""
 ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]

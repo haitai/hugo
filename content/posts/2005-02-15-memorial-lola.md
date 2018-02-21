@@ -5,7 +5,7 @@ type: post
 date: 2005-02-15T01:26:00+00:00
 url: /posts/memorial-lola/
 categories:
-  - Uncategorized
+  - 未分类
 tags:
   - story
 

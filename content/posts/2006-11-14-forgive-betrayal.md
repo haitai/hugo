@@ -5,9 +5,9 @@ type: post
 date: 2006-11-14T04:47:00+00:00
 url: /posts/forgive-betrayal/
 categories:
-  - Uncategorized
+  - 未分类
 tags:
-  - Uncategorized
+  - 未分类
 
 ---
 大多数正常的人在疼痛面前无法抵挡。

@@ -5,7 +5,7 @@ type: post
 date: 2005-09-19T04:07:00+00:00
 url: /posts/stories-of-wisdom/
 categories:
-  - Uncategorized
+  - 未分类
 tags:
   - story
 
