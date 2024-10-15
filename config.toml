@@ -1,6 +1,6 @@
-baseurl = "https://d5.work/"
+baseurl = "https://d5.huhaitai.com/"
 languageCode = "en-us"
-title = "狄无"
+title = "D5"
 theme = "classic"
 googleAnalytics = ""
 ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
@@ -27,4 +27,4 @@ paginate = 1
 
 [params]
     description = ""
-    footer = "/[联系](mailto:i@d5.work)"
+    footer = "/[联系](mailto:)"
