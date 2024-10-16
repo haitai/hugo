@@ -1,7 +1,7 @@
 body {
   max-width: 800px;
   margin: auto;
-  line-height: 1.5em;
+  line-height: 1.75em;
 }
 h1,h2,h3,h4{font-weight: 400}
 /* Table of Contents, if wanted
@@ -34,7 +34,7 @@ html,body,.mainer{height: 100%}
 .terms { font-size: .9em; }
 .menu { text-align: center; }
 footer, .article-meta {text-align: left;}
-.title { font-size: 1.1em; }
+.title { font-size: 1em; }
 footer a { text-decoration: none; }
 
 .pull-left {float: left;padding-right: 1rem;}
@@ -130,3 +130,48 @@ ul{margin-left: 0px; padding-left: 20px;}
 }
 .hr0{height:1px;border:none;border-top:1px dashed #D12F2E;}
 #recent-posts{margin:10px auto 0}
+
+
+.archive-posts {
+    width: 100%;
+}
+
+.archive-year {
+    margin-top: 40px;
+}
+.archive-year-header h2{font-weight:700}
+.archive-year:not(:last-of-type) {
+    border-bottom: 2px solid var(--border);
+}
+
+.archive-month {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px 0;
+}
+
+.archive-month-header {
+    margin:0;
+    width: 200px;
+}
+
+.archive-month:not(:last-of-type) {
+    border-bottom: 1px solid var(--border);
+}
+
+.archive-entry {
+    position: relative;
+    padding: 5px;
+    margin:0;
+}
+
+.archive-entry-title {
+    margin: 0;
+    font-weight: 400;
+}
+
+.archive-count,
+.archive-meta {
+    color: var(--secondary);
+    font-size: 14px;
+}
