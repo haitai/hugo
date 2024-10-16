@@ -1,21 +1,11 @@
 {{ partial "header.html" . }}
 
 {{if not .IsHome }}
-<h1>{{ .Title }}</h1>
+<h1>{{ if eq .URL "/posts/" }}文章{{ else }}{{ .Title }}{{ end }}</h1>
 {{ end }}
 
 {{ .Content }}
 
-<!--
-<ul>
-  {{ range (where .Data.Pages "Section" "!=" "") }}
-  <li>
-    <span class="date">{{ .Date.Format "2006/01/02" }}</span>
-    <a href="{{ .URL }}">{{ .Title }}</a>
-  </li>
-  {{ end }}
-</ul>
--->
 
 {{- $pages := where .Data.Pages "Section" "!=" "" }}
   {{- range $pages.GroupByPublishDate "2006"  }}
