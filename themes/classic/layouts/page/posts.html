@@ -3,7 +3,9 @@
 {{if not .IsHome }}
 <h1>{{ if eq .URL "/posts/" }}文章{{ else }}{{ .Title }}{{ end }}</h1>
 {{ end }}
-{{ .Content }} 
+
+{{ .Content }}
+
 
 {{- $pages := where .Data.Pages "Section" "!=" "" }}
   {{- range $pages.GroupByPublishDate "2006"  }}
