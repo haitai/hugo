@@ -13,8 +13,9 @@
     <div class="archive-group-title">
       <h2 class="archive-year">{{ .Key }}<sup class="archive-count">&nbsp;{{ len .Pages }}</sup></h2>
     </div>
+	<ul class="terms">
     {{- range .Pages }}
-    <div class="archive-post">
+	 <li>
       <time datetime="{{ .Date.Format " 2006-01-02" }}" class="archive-post-time">
         {{ .Date | time.Format (.Site.Params.dateFormatToUse | default "2006-01-02") }}
       </time>
@@ -23,8 +24,9 @@
           {{ .Title }}
         </a>
       </span>
-    </div>
+	</li>
     {{- end }}
+	</ul>
   </section>
   {{- end }}
 {{ partial "footer.html" . }}
