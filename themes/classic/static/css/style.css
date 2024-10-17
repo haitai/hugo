@@ -13,6 +13,7 @@ output:
     toc: true
 
     */
+h1{font-size:1.75em}
 html,body,.mainer{height: 100%}
 #TableOfContents, #TOC {
   border: 1px solid #eee;
@@ -31,7 +32,19 @@ html,body,.mainer{height: 100%}
 .article-meta{
   text-decoration: none;
 }
-.terms { font-size: .9em; }
+.terms { font-size: .9em; padding-left:0}
+.terms li{list-style-type:none}
+.terms li::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    background: #D12F2E;
+    display: inline-block;
+    -webkit-transform: translateY(-3px);
+    transform: translateY(-3px);
+    margin: 0 10px 0 5px
+}
+
 .menu { text-align: center; }
 footer, .article-meta {text-align: left;}
 .title { font-size: 1em; }
@@ -53,14 +66,14 @@ a:hover {
 header,footer {
     position: relative;
     width: 100%;
-    height: 1.75rem;
+    height: 2rem;
     font-family: "Lucida Console" , "Liberation Mono";
     font-size: .875rem;
     background: #D12F2E;
     color: #fff
 }
-footer{    line-height: 1.75rem; 
-    margin-top:-1.75rem; }
+footer{line-height: 2rem; 
+    margin-top:-2rem; }
 header ul,footer ul,
 header ol,footer ol {
     margin: 0;
@@ -73,7 +86,7 @@ header nav,footer nav {
 
 header a,footer a {
     color: #fff;
-    line-height: 1.75rem;
+    line-height: 2rem;
 }
 header a:hover,
 header .current a {
@@ -130,48 +143,3 @@ ul{margin-left: 0px; padding-left: 20px;}
 }
 .hr0{height:1px;border:none;border-top:1px dashed #D12F2E;}
 #recent-posts{margin:10px auto 0}
-
-
-.archive-posts {
-    width: 100%;
-}
-
-.archive-year {
-    margin-top: 40px;
-}
-.archive-year-header h2{font-weight:700}
-.archive-year:not(:last-of-type) {
-    border-bottom: 2px solid var(--border);
-}
-
-.archive-month {
-    display: flex;
-    align-items: flex-start;
-    padding: 10px 0;
-}
-
-.archive-month-header {
-    margin:0;
-    width: 200px;
-}
-
-.archive-month:not(:last-of-type) {
-    border-bottom: 1px solid var(--border);
-}
-
-.archive-entry {
-    position: relative;
-    padding: 5px;
-    margin:0;
-}
-
-.archive-entry-title {
-    margin: 0;
-    font-weight: 400;
-}
-
-.archive-count,
-.archive-meta {
-    color: var(--secondary);
-    font-size: 14px;
-}
