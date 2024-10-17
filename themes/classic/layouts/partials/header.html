@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
   <head>
-    <title>{{ if eq .URL "/" }}{{ else if eq .URL "/posts/" }}文章 | {{ else if eq .URL "/tags/" }}标签 | {{ else if eq .URL "/categories/" }}分类 | {{ else }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+    <title>{{ if eq .URL "/" }}{{ else if eq .URL "/posts/" }}存档 | {{ else if eq .URL "/tags/" }}标签 | {{ else if eq .URL "/categories/" }}分类 | {{ else }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="msapplication-TileColor" content="#D12F2E" />
