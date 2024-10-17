@@ -1,24 +1,4 @@
     </div>
-        </div>
-
-    <footer>
-    {{ partial "foot_custom.html" . }}
-    <nav>
-    <ul>
-      <li class="pull-left">
-      {{ with .Site.Params.footer }}
-      {{ . | markdownify }}
-      {{ end }}
-      </li>
-
-      {{ range .Site.Menus.feed }}
-      {{ $name := lower .Name}}
-      <li class="pull-right">
-        <a href="{{ .URL }}">{{ lower .Name}}</a>
-      </li>
-      {{end}}
-    </ul>
-  </nav>
-    </footer>
+        </div>    
   </body>
 </html>
