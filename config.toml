@@ -12,19 +12,19 @@ paginate = 1
 [[menu.main]]
     name = "文章"
     url = "/posts/"
-    weight = 3
+    weight = 4
 [[menu.main]]
     name = "分类"
     url = "/categories/"
-    weight = 2
+    weight = 3
 [[menu.main]]
     name = "标签"
     url = "/tags/"
-    weight = 1
-[[menu.feed]]
+    weight = 2
+[[menu.main]]
     name = "订阅"
     url = "/index.xml"
-
+    weight = 1
 [params]
     description = ""
     footer = "[联系](mailto:)"
