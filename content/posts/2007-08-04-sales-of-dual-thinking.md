@@ -3,7 +3,7 @@ title: 销售的双重思想
 author: admin
 type: post
 date: 2007-08-03T23:14:00+00:00
-url: /post/sales-of-dual-thinking/
+url: /posts/sales-of-dual-thinking/
 categories:
   - 未分类
 tags:

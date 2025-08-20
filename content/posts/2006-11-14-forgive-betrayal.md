@@ -3,7 +3,7 @@ title: 原谅背叛
 author: admin
 type: post
 date: 2006-11-14T04:47:00+00:00
-url: /post/forgive-betrayal/
+url: /posts/forgive-betrayal/
 categories:
   - 未分类
 tags:

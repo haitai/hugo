@@ -3,7 +3,7 @@ title: 弯腰去捡
 author: admin
 type: post
 date: 2012-10-29T13:48:02+00:00
-url: /post/bent-to-pick/
+url: /posts/bent-to-pick/
 categories:
   - 未分类
 

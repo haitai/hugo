@@ -3,7 +3,7 @@ title: 堵车
 author: admin
 type: post
 date: 2005-04-02T20:56:00+00:00
-url: /post/traffic-jam/
+url: /posts/traffic-jam/
 categories:
   - 未分类
 tags:

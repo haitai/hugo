@@ -3,7 +3,7 @@ title: 南辕北辙
 author: admin
 type: post
 date: 2010-06-22T03:41:04+00:00
-url: /post/poles-apart/
+url: /posts/poles-apart/
 categories:
   - 未分类
 tags:

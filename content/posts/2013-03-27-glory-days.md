@@ -3,7 +3,7 @@ title: 光辉岁月
 author: admin
 type: post
 date: 2013-03-27T13:58:13+00:00
-url: /post/glory-days/
+url: /posts/glory-days/
 categories:
   - 未分类
 tags:

@@ -3,7 +3,7 @@ title: 袋鼠日记
 author: admin
 type: post
 date: 2015-01-14T08:32:55+00:00
-url: /post/dai-shu-ri-ji/
+url: /posts/dai-shu-ri-ji/
 categories:
   - 未分类
 

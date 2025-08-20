@@ -3,7 +3,7 @@ title: 智慧的故事
 author: admin
 type: post
 date: 2005-09-19T04:07:00+00:00
-url: /post/stories-of-wisdom/
+url: /posts/stories-of-wisdom/
 categories:
   - 未分类
 tags:

@@ -3,7 +3,7 @@ title: 王小波（1）
 author: admin
 type: post
 date: 2005-02-24T03:15:00+00:00
-url: /post/wang-xiaobo-1/
+url: /posts/wang-xiaobo-1/
 categories:
   - 未分类
 tags:

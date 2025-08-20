@@ -3,7 +3,7 @@ title: 渔鱼
 author: admin
 type: post
 date: 2006-09-27T04:28:00+00:00
-url: /post/fish-and-fisheries/
+url: /posts/fish-and-fisheries/
 categories:
   - 未分类
 tags:

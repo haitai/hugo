@@ -3,7 +3,7 @@ title: 纪念Lola
 author: admin
 type: post
 date: 2005-02-15T01:26:00+00:00
-url: /post/memorial-lola/
+url: /posts/memorial-lola/
 categories:
   - 未分类
 tags:

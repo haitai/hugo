@@ -3,7 +3,7 @@ title: 伪善
 author: admin
 type: post
 date: 2007-08-07T05:45:00+00:00
-url: /post/hypocritical/
+url: /posts/hypocritical/
 categories:
   - 未分类
 tags:

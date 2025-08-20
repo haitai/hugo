@@ -3,7 +3,7 @@ title: 两种人
 author: admin
 type: post
 date: 2006-09-27T06:00:00+00:00
-url: /post/2-kinds-of-people/
+url: /posts/2-kinds-of-people/
 categories:
   - 未分类
 tags:
