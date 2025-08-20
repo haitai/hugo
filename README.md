@@ -1,1 +1,0 @@
-Hugo static blog generator.
