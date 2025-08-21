@@ -1,6 +1,6 @@
-baseURL: https://b.huhaitai.com/
+baseURL: https://d5.huhaitai.com/
 languageCode: en-us
-title: Haitai Hub
+title: D5
 theme: ["PaperMod"]
 
 enableInlineShortcodes: true
@@ -128,6 +128,7 @@ params:
   ShowAllPagesInArchive: true
   ShowPageNums: true
   ShowToc: true
+  robotsNoIndex: true
   # comments: false
   images: ["images/papermod-cover.png"]
 
