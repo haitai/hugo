@@ -1,5 +1,6 @@
 baseURL: https://d5.huhaitai.com/
-languageCode: zh
+languageCode: zh-cn
+defaultContentLanguage: zh
 title: D5
 theme: ["PaperMod"]
 
@@ -146,7 +147,7 @@ params:
         url: tags
 
   homeInfoParams:
-    Title: "PaperMod's Demo"
+    Title: "Hello!"
     Content: >
       👋 Welcome to my blog!
 
