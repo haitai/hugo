@@ -1,5 +1,6 @@
 baseURL: https://594.de5.net/
 languageCode: zh-cn
+defaultContentLanguage: zh
 title: D5
 theme: ["PaperMod"]
 
@@ -21,7 +22,7 @@ pagination:
   pagerSize: 10
 
 languages:
-  en:
+  zh:
     languageName: "English"
     weight: 1
     taxonomies:
@@ -30,13 +31,13 @@ languages:
       series: series
     menu:
       main:
-        - name: Archives
+        - name: 归档
           url: archives
           weight: 5
-        - name: Tags
+        - name: 标签
           url: tags/
           weight: 10           
-        - name: Search
+        - name: 搜索
           url: search/
           weight: 20
 
@@ -115,7 +116,7 @@ params:
   description: "Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod"
   author: Theme PaperMod
   # author: ["Me", "You"] # multiple authors
-
+  dateFormat: "2006年1月2日"
   defaultTheme: auto
   # disableThemeToggle: true
   ShowShareButtons: false
@@ -148,9 +149,9 @@ params:
         url: tags
 
   homeInfoParams:
-    Title: "Hello!"
+    Title: "D5"
     Content: >
-      👋 Welcome to my blog.
+      👋 你好，欢迎光临。
 
   socialIcons:
     - name: rss
