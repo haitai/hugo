@@ -149,7 +149,7 @@ params:
         url: tags
 
   homeInfoParams:
-    Title: "D5"
+    #Title: "D5"
     Content: >
       👋 你好，欢迎光临。
 
