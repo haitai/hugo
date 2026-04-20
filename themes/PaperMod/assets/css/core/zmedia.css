@@ -10,10 +10,10 @@
     }
 
     /* post-entry */
-    .first-entry {
+    /*  .first-entry {
         min-height: 260px;
     }
-
+    */
     /* archive */
     .archive-month {
         flex-direction: column;

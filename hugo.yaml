@@ -18,7 +18,7 @@ minify:
 
 pagination:
   disableAliases: false
-  pagerSize: 5
+  pagerSize: 10
 
 languages:
   en:
@@ -33,12 +33,13 @@ languages:
         - name: Archives
           url: archives
           weight: 5
-        - name: Search
-          url: search/
-          weight: 10
         - name: Tags
           url: tags/
-          weight: 10
+          weight: 10           
+        - name: Search
+          url: search/
+          weight: 20
+
         #- name: Source
         #  url: https://github.com/haitai/hugo
 
@@ -149,9 +150,12 @@ params:
   homeInfoParams:
     Title: "Hello!"
     Content: >
-      👋 Welcome to my blog!
+      👋 Welcome to my blog.
 
   socialIcons:
+    - name: rss
+      title: RSS
+      url: "/index.xml"
     #- name: github
     #  title: View Source on Github
     #  url: "https://github.com/haitai/hugo"
