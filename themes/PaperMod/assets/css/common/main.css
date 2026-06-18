@@ -30,7 +30,7 @@
 
 .social-icons a {
     display: inline-flex;
-    padding: 10px;
+    padding: 10px 20px 10px 0;
 }
 
 .social-icons a svg {
