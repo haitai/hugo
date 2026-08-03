@@ -1,6 +1,7 @@
 baseURL: https://d5.us.ci/
 languageCode: zh-cn
 defaultContentLanguage: zh
+hasCJKLanguage: true
 title: D5
 theme: ["PaperMod"]
 
@@ -121,6 +122,7 @@ params:
   # disableThemeToggle: true
   ShowShareButtons: false
   ShowReadingTime: false
+  ShowWordCount: true
   hideAuthor: true
   # disableSpecial1stPost: true
   displayFullLangName: true

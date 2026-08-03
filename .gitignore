@@ -5,5 +5,5 @@ Desktop.ini
 
 # My configurations:
 db.ini
-push.bat
 public
+.hugo_build.lock

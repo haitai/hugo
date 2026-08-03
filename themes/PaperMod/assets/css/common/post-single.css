@@ -29,8 +29,13 @@
     box-shadow: 0 1px 0 var(--secondary);
 }
 
+.breadcrumbs  {
+	margin-bottom:1rem;
+}
+
 .breadcrumbs a {
     font-size: 16px;
+	color: var(--secondary);
 }
 
 .post-content {
