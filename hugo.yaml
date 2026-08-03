@@ -130,7 +130,10 @@ params:
   ShowRssButtonInSectionTermList: true
   ShowAllPagesInArchive: true
   ShowPageNums: true
+  UseHugoToc: true
   ShowToc: true
+  tocopen: true
+
   robotsNoIndex: true
   # comments: false
   images: ["images/papermod-cover.png"]
