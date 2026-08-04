@@ -1,12 +1,12 @@
 @font-face {
   font-family: "LXGWWenKaiScreenR";
-  src: url("/fonts/lxgwwenkaiscreen.subset.v1.235.standard.woff2");
+  src: url("fonts/lxgwwenkaiscreen.subset.v1.235.standard.woff2");
 }
 
 /* https://www.webfontfree.com/cn/download/SFProText-Regular */
 @font-face {
   font-family: "SFProText-Regular";
-  src: url("/fonts/SFProText-Regular.woff2");
+  src: url("fonts/SFProText-Regular.woff2");
 }
 
 body {
