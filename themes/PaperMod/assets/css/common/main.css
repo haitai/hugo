@@ -9,6 +9,11 @@
   src: url("/fonts/SFProText-Regular.woff2");
 }
 
+@font-face {
+  font-family: "Impact";
+  src: url("/fonts/impact.woff2");
+}
+
 body {
   font-family: "SFProText-Regular", "LXGWWenKaiScreenR";
   font-size: 16px;

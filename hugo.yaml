@@ -37,7 +37,10 @@ languages:
           weight: 5
         - name: 标签
           url: tags/
-          weight: 10           
+          weight: 10
+        - name: 分类
+          url: categories/
+          weight: 15           
         - name: 搜索
           url: search/
           weight: 20
