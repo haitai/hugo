@@ -22,7 +22,6 @@ jobs:
       NODE_VERSION: 24.18.0
       TZ: Asia/Shanghai
       DEPLOY_REPO: haitai/haitai.github.io
-      DEPLOY_BRANCH: gh-pages
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -115,11 +114,19 @@ jobs:
           key: ${{ steps.cache-restore.outputs.cache-primary-key }}
 
       - name: Deploy to haitai.github.io
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GH_PAT }}
-          publish_dir: ./public
-          publish_branch: main
-          destination_repo: haitai/haitai.github.io
-          user_name: github-actions[bot]
-          user_email: 41898282+github-actions[bot]@users.noreply.github.com
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          # 浅克隆目标仓库（只需 main 分支最新内容）
+          git clone --depth 1 --branch main https://x-access-token:${GH_PAT}@github.com/${DEPLOY_REPO}.git "${RUNNER_TEMP}/deploy"
+          # 清空旧内容（保留 .git 目录）
+          rm -rf "${RUNNER_TEMP}/deploy"/*
+          # 复制构建产物
+          cp -r public/* "${RUNNER_TEMP}/deploy/"
+          # 提交推送
+          cd "${RUNNER_TEMP}/deploy"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Deploy from ${GITHUB_REPOSITORY}@${GITHUB_SHA}"
+          git push origin main
