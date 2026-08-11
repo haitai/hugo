@@ -1,0 +1,77 @@
+/* ================================================
+   Mobile Hamburger Menu Styles
+   ================================================ */
+
+/* 移动端：隐藏菜单按钮（桌面端） */
+#menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 8px;
+    margin: auto 4px;
+    color: inherit;
+    vertical-align: middle;
+}
+
+/* 移动端：隐藏普通菜单 */
+@media screen and (max-width: 768px) {
+    #menu-toggle {
+        display: block;
+    }
+
+    #menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        word-break: normal;
+        white-space: normal;
+        overflow-x: visible;
+        padding: 8px 0;
+        gap: 4px;
+    }
+
+    /* 菜单展开状态 */
+    #menu.menu-open {
+        display: flex;
+    }
+
+    #menu li + li {
+        margin-inline-start: 0;
+    }
+
+    #menu li {
+        width: 100%;
+    }
+
+    #menu a {
+        width: 100%;
+        font-size: 15px;
+        padding: 4px 0;
+    }
+
+    #menu .active {
+        border-bottom: none;
+        border-inline-start: 2px solid currentColor;
+        padding-inline-start: 6px;
+    }
+
+    /* 汉堡图标动画 */
+    #menu-toggle .bar {
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        transform-origin: center;
+    }
+
+    /* 展开时：三条线变 X */
+    #menu-toggle.menu-open .bar.top {
+        transform: translateY(6px) rotate(45deg);
+    }
+
+    #menu-toggle.menu-open .bar.mid {
+        opacity: 0;
+    }
+
+    #menu-toggle.menu-open .bar.bot {
+        transform: translateY(-6px) rotate(-45deg);
+    }
+}
