@@ -98,3 +98,68 @@ body:not(.dark) #sun {
 .logo-switches {
     flex-wrap: inherit;
 }
+/* ================================================
+   Mobile Hamburger Menu Styles
+   ================================================ */
+
+/* ================================================
+   Mobile Hamburger Menu Styles
+   ================================================ */
+
+/* 隐藏菜单按钮（桌面端由 nav 的 flex 布局自然处理） */
+#menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 8px;
+    color: inherit;
+    line-height: 1;
+}
+
+/* 移动端（≤768px） */
+@media screen and (max-width: 768px) {
+    #menu-toggle {
+        display: flex;
+        /* 关键：和 logo 同一行，自然垂直居中 */
+        align-items: center;
+        justify-content: center;
+    }
+
+    #menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        word-break: normal;
+        white-space: normal;
+        overflow-x: visible;
+        padding: 8px 0;
+        gap: 4px;
+    }
+
+    /* 菜单展开状态 */
+    #menu.menu-open {
+        display: flex;
+    }
+
+    #menu li + li {
+        margin-inline-start: 0;
+    }
+
+    #menu li {
+        width: 100%;
+		line-height:36px;
+    }
+
+    #menu a {
+        width: 100%;
+        font-size: 15px;
+        padding: 4px 0;
+    }
+
+    #menu .active {
+        border-bottom: none;
+        border-inline-start: 2px solid currentColor;
+        padding-inline-start: 6px;
+    }
+}
