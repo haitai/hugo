@@ -26,20 +26,29 @@
     (function () {
         var btn = document.getElementById('menu-toggle');
         var menu = document.getElementById('menu');
+        var iconHam = document.getElementById('icon-hamburger');
+        var iconClose = document.getElementById('icon-close');
         if (!btn || !menu) return;
 
         btn.addEventListener('click', function () {
             var isOpen = menu.classList.toggle('menu-open');
-            btn.classList.toggle('menu-open', isOpen);
             btn.setAttribute('aria-expanded', String(isOpen));
+            if (isOpen) {
+                iconHam.style.display = 'none';
+                iconClose.style.display = 'block';
+            } else {
+                iconHam.style.display = 'block';
+                iconClose.style.display = 'none';
+            }
         });
 
-        // 点击菜单链接后自动关闭（可选）
+        // 点击菜单链接后自动关闭
         menu.addEventListener('click', function (e) {
             if (e.target.tagName === 'A') {
                 menu.classList.remove('menu-open');
-                btn.classList.remove('menu-open');
                 btn.setAttribute('aria-expanded', 'false');
+                iconHam.style.display = 'block';
+                iconClose.style.display = 'none';
             }
         });
     })();
