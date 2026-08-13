@@ -1,23 +1,23 @@
-@font-face {
+/*  @font-face {
   font-family: "LXGWWenKaiScreenR";
   src: url("/fonts/lxgwwenkaiscreen.subset.v1.235.standard.woff2");
 }
 
-/* https://www.webfontfree.com/cn/download/SFProText-Regular */
+https://www.webfontfree.com/cn/download/SFProText-Regular
 @font-face {
   font-family: "SFProText-Regular";
   src: url("/fonts/SFProText-Regular.woff2");
 }
-
+ */
 @font-face {
   font-family: "Impact";
   src: url("/fonts/impact.woff2");
 }
 
 body {
-  font-family: "SFProText-Regular", "LXGWWenKaiScreenR";
+  font-family: "Helvetica", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo","SFProText-Regular", "LXGWWenKaiScreenR";
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.8;
   word-break: break-word;
   background: var(--theme);
   font-display: swap;
