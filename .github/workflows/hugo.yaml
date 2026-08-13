@@ -105,7 +105,7 @@ jobs:
       - name: Build
         run: |
           echo "Building the project..."
-          hugo build --gc --minify --cacheDir "${{ runner.temp }}/.cache/hugo"
+          hugo build --baseURL="https://haitai.github.io/" --gc --minify --cacheDir "${{ runner.temp }}/.cache/hugo"
 
       - name: Cache save
         uses: actions/cache/save@v6
