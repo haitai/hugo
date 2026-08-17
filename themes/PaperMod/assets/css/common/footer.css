@@ -30,6 +30,10 @@
     border-bottom: 1px solid var(--primary);
 }
 
+.footer svg {
+	vertical-align: middle
+}
+
 .top-link {
     visibility: hidden;
     position: fixed;
