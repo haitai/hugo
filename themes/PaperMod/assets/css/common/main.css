@@ -13,7 +13,10 @@ https://www.webfontfree.com/cn/download/SFProText-Regular
   font-family: "Impact";
   src: url("/fonts/impact.woff2");
 }
-
+@font-face {
+  font-family: "Consolas";
+  src: url("/fonts/Consolas.woff2");
+}
 body {
   font-family: "Helvetica", "Luxi Sans", "Segoe UI", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Logo","SFProText-Regular", "LXGWWenKaiScreenR";
   font-size: 16px;

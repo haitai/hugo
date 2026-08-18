@@ -1,11 +1,13 @@
 ---
 title: "{{ replace .File.ContentBaseName "-" " " | title }}"
 #slug: ""
-#description: "Meta标签 页面描述"
-#summary: "文章预览 内容摘要"
+#description: ""
+#summary: ""
 date: {{ .Date }}
 #lastmod: {{ .Date }}
+type: post
 draft: false
-categories: []
 tags: []
+categories: []
+series: []
 ---

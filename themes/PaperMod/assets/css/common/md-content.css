@@ -157,17 +157,20 @@
     line-height: 1.5;
     background: var(--code-bg);
     border-radius: 2px;
+	font-family: Consolas, SFMono-Regular, Menlo, Monaco, liberation mono, courier new, monospace;
 }
 
 .md-content pre code {
     display: grid;
     margin: auto 0;
     padding: 10px;
-    color: rgb(213, 213, 214);
-    background: var(--code-block-bg) !important;
+    background: var(--hljs-bg) !important;
+    color: var(--content);
     border-radius: var(--radius);
     overflow-x: auto;
     word-break: break-all;
+	font-family: Consolas, SFMono-Regular, Menlo, Monaco, liberation mono, courier new, monospace;
+    font-size: 14px;
 }
 
 .md-content blockquote {
