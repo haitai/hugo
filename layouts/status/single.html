@@ -1,0 +1,30 @@
+{{- define "main" }}
+
+<article class="post-single status-single">
+  <header class="post-header">
+    {{- partial "breadcrumbs.html" . }}
+    {{- if not (.Param "hideMeta") }}
+    <div class="post-meta">
+      {{- partial "post_meta.html" . -}}
+    </div>
+    {{- end }}
+  </header>
+
+  {{- if .Content }}
+  <div class="md-content status-content">
+    {{- if not (.Param "disableAnchoredHeadings") }}
+    {{- partial "anchored_headings.html" .Content -}}
+    {{- else }}{{ .Content }}{{ end }}
+  </div>
+  {{- end }}
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      {{- range ($.GetTerms "tags") }}
+      <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+      {{- end }}
+    </ul>
+  </footer>
+</article>
+
+{{- end }}{{/* end main */ -}}

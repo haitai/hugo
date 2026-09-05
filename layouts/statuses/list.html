@@ -1,0 +1,47 @@
+{{- define "main" }}
+
+<header class="page-header">
+  {{- partial "breadcrumbs.html" . }}
+  <h1>微博</h1>
+</header>
+
+{{- $paginator := .Paginate .RegularPages }}
+
+{{- range $paginator.Pages }}
+<article class="post-entry status-entry">
+  <header class="entry-header">
+    <div class="post-meta">
+      {{- partial "post_meta.html" . -}}
+    </div>
+  </header>
+  <div class="entry-content">
+    {{ .Content | safeHTML }}
+  </div>
+  <a class="entry-link" aria-label="post link" href="{{ .Permalink }}"></a>
+</article>
+{{- end }}
+
+{{- if gt $paginator.TotalPages 1 }}
+<footer class="page-footer">
+  <nav class="pagination">
+    {{- if $paginator.HasPrev }}
+    <a class="prev" href="{{ $paginator.Prev.URL | absURL }}">
+      ?&nbsp;{{ i18n "prev_page" }}&nbsp;
+      {{- if (.Param "ShowPageNums") }}
+      {{- sub $paginator.PageNumber 1 }}/{{ $paginator.TotalPages }}
+      {{- end }}
+    </a>
+    {{- end }}
+    {{- if $paginator.HasNext }}
+    <a class="next" href="{{ $paginator.Next.URL | absURL }}">
+      {{- i18n "next_page" }}&nbsp;
+      {{- if (.Param "ShowPageNums") }}
+      {{- add 1 $paginator.PageNumber }}/{{ $paginator.TotalPages }}
+      {{- end }}&nbsp;?
+    </a>
+    {{- end }}
+  </nav>
+</footer>
+{{- end }}
+
+{{- end }}{{/* end main */ -}}

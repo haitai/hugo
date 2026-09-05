@@ -1,0 +1,25 @@
+/* ================================================
+   Status (微博 / Microblog) Styles
+   ================================================ */
+
+.status-entry {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.status-entry .entry-header {
+    margin-bottom: 0;
+}
+
+.status-entry .entry-content {
+    margin-top: 0;
+}
+
+.status-entry .entry-content p {
+    margin: 0.4em 0;
+}
+
+.status-content {
+    margin-top: 0.3rem;
+}
