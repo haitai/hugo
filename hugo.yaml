@@ -1,8 +1,8 @@
-baseURL: https://d5.us.ci/
+baseURL: https://b.huhaitai.com/
 languageCode: zh-cn
 defaultContentLanguage: zh
 hasCJKLanguage: true
-title: D5
+title: Haitai Hub
 theme: ["PaperMod"]
 
 enableInlineShortcodes: true
