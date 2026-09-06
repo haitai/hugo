@@ -17,6 +17,9 @@ tags = [
   "minimalist",
   "highlight.js",
   "search"
+  "component"
+  "notice"
+  "multilingual"
 ]
 features = [
   "responsive",

@@ -2,6 +2,6 @@
 date: {{ .Date }}
 lastmod: {{ .Date }}
 type: status
-draft: true
+draft: false
 tags: []
 ---

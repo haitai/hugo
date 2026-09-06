@@ -1,0 +1,23 @@
+{{/* Available notice types: warning, info, note, tip */}}
+{{- $noticeType := .Get 0 | default "note" -}}
+{{- $title := .Get 1 | default "" -}}
+
+{{/* Workaround markdownify inconsistency for single/multiple paragraphs */}}
+{{- $raw := (markdownify .Inner | chomp) -}}
+{{- $block := findRE "(?is)^<(?:address|article|aside|blockquote|canvas|dd|div|dl|dt|fieldset|figcaption|figure|footer|form|h(?:1|2|3|4|5|6)|header|hgroup|hr|li|main|nav|noscript|ol|output|p|pre|section|table|tfoot|ul|video)\\b" $raw 1 -}}
+
+{{/* Load the css if it's the first time */}}
+{{- if not (.Page.Store.Get "notice-style-loaded-flag") -}}
+<style type="text/css"></style>
+{{- .Page.Store.Set "notice-style-loaded-flag" true -}}
+{{- end -}}
+
+<div class="notice {{ $noticeType }}" {{ if len .Params | eq 2 }} id="{{ .Get 1 }}" {{ end }}>
+    <p class="notice-title">
+        <span class="icon-notice baseline">
+            {{ printf "icons/%s.svg" $noticeType | readFile | safeHTML }}
+        </span>
+        {{- if $title }} {{ $title }} {{ else }} {{ i18n $noticeType }} {{ end -}}
+    </p>
+    {{- if or $block (not $raw) }}{{ $raw }}{{ else }}<p>{{ $raw }}</p>{{ end -}}
+</div>

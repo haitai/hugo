@@ -2,7 +2,21 @@
 
 <header class="page-header">
   {{- partial "breadcrumbs.html" . }}
-  <h1>微博</h1>
+  <h1>
+      {{ .Title }}
+    {{- if and (or (eq .Kind `term`) (eq .Kind `section`)) (.Param "ShowRssButtonInSectionTermList") }}
+    {{- with .OutputFormats.Get "rss" }}
+    <a href="{{ .RelPermalink }}" title="RSS" aria-label="RSS">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" height="23">
+        <path d="M4 11a9 9 0 0 1 9 9" />
+        <path d="M4 4a16 16 0 0 1 16 16" />
+        <circle cx="5" cy="19" r="1" />
+      </svg>
+    </a>
+    {{- end }}
+    {{- end }}
+  </h1>
 </header>
 
 {{- $paginator := .Paginate .RegularPages }}
@@ -10,13 +24,14 @@
 {{- range $paginator.Pages }}
 <article class="post-entry status-entry">
   <header class="entry-header">
-    <div class="post-meta">
-      {{- partial "post_meta.html" . -}}
-    </div>
+
   </header>
   <div class="entry-content">
     {{ .Content | safeHTML }}
   </div>
+  <div class="post-meta">
+  {{- partial "post_meta.html" . -}}
+</div>
   <a class="entry-link" aria-label="post link" href="{{ .Permalink }}"></a>
 </article>
 {{- end }}
