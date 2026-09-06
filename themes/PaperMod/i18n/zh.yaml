@@ -49,45 +49,45 @@
 - id: normal
   translation: "普通"
 
-- id: admonition_abstract
+- id: admonitions.abstract
   translation: "摘要"
-- id: admonition_caution
+- id: admonitions.caution
   translation: "注意"
-- id: admonition_code
+- id: admonitions.code
   translation: "代码"
-- id: admonition_conclusion
+- id: admonitions.conclusion
   translation: "结论"
-- id: admonition_danger
+- id: admonitions.danger
   translation: "危险"
-- id: admonition_error
+- id: admonitions.error
   translation: "错误"
-- id: admonition_example
+- id: admonitions.example
   translation: "示例"
-- id: admonition_experiment
+- id: admonitions.experiment
   translation: "实验"
-- id: admonition_goal
+- id: admonitions.goal
   translation: "目标"
-- id: admonition_idea
+- id: admonitions.idea
   translation: "想法"
-- id: admonition_important
+- id: admonitions.important
   translation: "重要"
-- id: admonition_info
+- id: admonitions.info
   translation: "信息"
-- id: admonition_memo
+- id: admonitions.memo
   translation: "备忘"
-- id: admonition_note
+- id: admonitions.note
   translation: "笔记"
-- id: admonition_notify
+- id: admonitions.notify
   translation: "通知"
-- id: admonition_question
+- id: admonitions.question
   translation: "问题"
-- id: admonition_quote
+- id: admonitions.quote
   translation: "引用"
-- id: admonition_success
+- id: admonitions.success
   translation: "成功"
-- id: admonition_task
+- id: admonitions.task
   translation: "任务"
-- id: admonition_tip
+- id: admonitions.tip
   translation: "提示"
-- id: admonition_warning
+- id: admonitions.warning
   translation: "警告"
