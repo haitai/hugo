@@ -48,3 +48,46 @@
   translation: "提示"
 - id: normal
   translation: "普通"
+
+- id: admonition_abstract
+  translation: "摘要"
+- id: admonition_caution
+  translation: "注意"
+- id: admonition_code
+  translation: "代码"
+- id: admonition_conclusion
+  translation: "结论"
+- id: admonition_danger
+  translation: "危险"
+- id: admonition_error
+  translation: "错误"
+- id: admonition_example
+  translation: "示例"
+- id: admonition_experiment
+  translation: "实验"
+- id: admonition_goal
+  translation: "目标"
+- id: admonition_idea
+  translation: "想法"
+- id: admonition_important
+  translation: "重要"
+- id: admonition_info
+  translation: "信息"
+- id: admonition_memo
+  translation: "备忘"
+- id: admonition_note
+  translation: "笔记"
+- id: admonition_notify
+  translation: "通知"
+- id: admonition_question
+  translation: "问题"
+- id: admonition_quote
+  translation: "引用"
+- id: admonition_success
+  translation: "成功"
+- id: admonition_task
+  translation: "任务"
+- id: admonition_tip
+  translation: "提示"
+- id: admonition_warning
+  translation: "警告"

@@ -47,11 +47,29 @@ The blockquote element represents content that is quoted from another source, op
 > Tiam, ad mint andaepu dandae nostion secatur sequo quae.
 > **Note** that you can use _Markdown syntax_ within a blockquote.
 
+
 #### Blockquote with attribution
 
 > Don't communicate by sharing memory, share memory by communicating.
 >
 > — <cite>Rob Pike[^1]</cite>
+
+#### Blockquote with Hugo-admonitions
+
+> [!TIP]
+> Warning: This operation will delete all data.
+
+> [!TIP] You can choose to only to show the header!
+
+> [!TIP] ""
+> This is a body-only callout without a header.
+
+> [!TIP]- Click here to view the tips
+
+> [!QUESTION] Can admonitions be nested?
+> > [!TODO] Yes!, they can.
+> > > [!EXAMPLE]  You can even use multiple layers of nesting.
+
 
 [^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
 
