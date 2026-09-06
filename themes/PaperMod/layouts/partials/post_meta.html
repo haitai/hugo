@@ -1,7 +1,11 @@
 {{- $scratch := newScratch }}
 
 {{- if not .Date.IsZero -}}
-{{- $scratch.Add "meta" (slice (printf "<span title='%s'>%s</span>" (.Date) (.Date | time.Format (default ":date_long" site.Params.DateFormat)))) }}
+{{- $dateFormat := site.Params.DateFormat }}
+{{- if eq .Type "status" -}}
+{{- $dateFormat = "2006年1月2日 15:04" -}}
+{{- end -}}
+{{- $scratch.Add "meta" (slice (printf "<span title='%s'>%s</span>" (.Date) (.Date | time.Format $dateFormat))) }}
 {{- end }}
 
 {{- if (.Param "ShowReadingTime") -}}
