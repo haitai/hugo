@@ -54,24 +54,26 @@ The blockquote element represents content that is quoted from another source, op
 >
 > — <cite>Rob Pike[^1]</cite>
 
+
+[^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
+
 #### Blockquote with Hugo-admonitions
 
 > [!TIP]
 > Warning: This operation will delete all data.
 
-> [!TIP] You can choose to only to show the header!
+> [!NOTE] You can choose to only to show the header!
 
-> [!TIP] ""
+> [!TASK] ""
 > This is a body-only callout without a header.
 
-> [!TIP]- Click here to view the tips
+> [!MEMO]+ Click here to view the tips
+> Something more.
 
 > [!QUESTION] Can admonitions be nested?
 > > [!TODO] Yes!, they can.
 > > > [!EXAMPLE]  You can even use multiple layers of nesting.
 
-
-[^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
 
 ## Tables
 
