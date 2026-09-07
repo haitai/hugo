@@ -10,6 +10,11 @@ draft: false
 tags: [test]
 categories: [测试]
 series: []
+cover:
+  image: "images/hello-world-cover.jpg"
+  alt: "图片替代文字" # 增强 SEO
+  caption: "图片说明文字" # 图片下方的说明（可选）
+  relative: false # 如果你使用的是绝对路径或 static 目录，设为 false
 ---
 
 This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.
@@ -141,16 +146,21 @@ Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and ot
 
 ## Syntax Highlight
 
-```css
-.post-content pre code {
-    display: block;
-    margin: auto 0;
-    padding: 10px;
-    /* 主要代码颜色 */
-    color: #abb2bf;
-    font-weight: 200;
-    overflow-x: auto;
-    word-break: break-all;
+```css { title=".\assets\css\extended\codeblock.css"}
+.x-highlight-wrapper :nth-child(2) {
+  margin-top: 0 !important;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
+/* --hljs-bg 和 --radius 是 PaperMod 主题提供的变量 */
+.x-highlight-title {
+  background: var(--hljs-bg) !important;
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+  color: #e7ce56;
+  padding: 4px 0 0 16px;
+  font-size: .78em;
 }
 ```
 
