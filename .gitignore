@@ -7,3 +7,4 @@ Desktop.ini
 db.ini
 public
 .hugo_build.lock
+resources/_gen
