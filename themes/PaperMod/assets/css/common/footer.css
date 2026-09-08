@@ -1,5 +1,5 @@
 .footer,
-.top-link {
+.top-link,.top-theme {
     font-size: 12px;
     color: var(--secondary);
 }
@@ -34,9 +34,9 @@
 	vertical-align: middle
 }
 
-.top-link {
+.top-link,.top-theme {
     position: fixed;
-    bottom: 4rem;
+    bottom: 5rem;
     right: 2rem;
     z-index: 99;
     background: var(--tertiary);
@@ -46,16 +46,23 @@
     border-radius: 64px;
     transition: visibility .3s, opacity .3s cubic-bezier(0.4, 0, 1, 1);
 }
+.top-theme{    
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;}
 .hidden {
     visibility: hidden;
     opacity: 0;
 }
 .top-link,
-.top-link svg {
+.top-link svg,
+.top-theme,
+.top-theme svg {
     filter: drop-shadow(0px 0px 0px var(--theme));
 }
 
 .footer a:hover,
-.top-link:hover {
+.top-link:hover,
+.top-theme:hover {
     color: var(--primary);
 }
