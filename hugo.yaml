@@ -202,7 +202,7 @@ params:
   #     safari_pinned_tab: "<link / abs url>"
 
   cover:
-       hidden: true # hide everywhere but not in structured data
+       hidden: false # hide everywhere but not in structured data
        hiddenInList: false # hide on list pages and home
        hiddenInSingle: true # hide on single page
        responsiveImages: true # 开启响应式图片优化（自动裁剪不同分辨率）

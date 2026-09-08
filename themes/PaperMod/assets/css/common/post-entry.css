@@ -57,7 +57,7 @@
 }
 
 .tag-entry .entry-cover {
-    display: none;
+    display: flex;
 }
 
 .entry-header h2 {
