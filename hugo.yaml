@@ -251,3 +251,7 @@ services:
     disableInlineCSS: true
   x:
     disableInlineCSS: true
+frontmatter:
+  lastmod:
+  - lastmod
+  - :fileModTime

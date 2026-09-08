@@ -16,9 +16,9 @@ tags = [
   "blog",
   "minimalist",
   "highlight.js",
-  "search"
-  "component"
-  "notice"
+  "search",
+  "component",
+  "notice",
   "multilingual"
 ]
 features = [
