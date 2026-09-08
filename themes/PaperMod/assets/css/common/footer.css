@@ -66,3 +66,4 @@
 .top-theme:hover {
     color: var(--primary);
 }
+.themeInner {display: flex;}
