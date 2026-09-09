@@ -141,7 +141,7 @@ params:
 
   robotsNoIndex: true
   # comments: false
-  images: ["images/papermod-cover.png"]
+  images: ["favicon.png"]
 
   profileMode:
     enabled: false
