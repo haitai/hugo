@@ -73,7 +73,6 @@
           {{- if .Title }}
           {{- .Title | markdownify }}
           {{- else }}
-
           {{ $plainText := .Content | plainify }}
             {{ if gt (countrunes $plainText) 25 }}
                 {{- substr (.Content | plainify) 0 25 }}...
