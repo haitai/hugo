@@ -164,7 +164,7 @@ params:
   socialIcons:
     - name: rss
       title: 订阅
-      url: "/subscribe"
+      url: "/subscribe/"
     #- name: github
     #  title: View Source on Github
     #  url: "https://github.com/haitai/hugo"
