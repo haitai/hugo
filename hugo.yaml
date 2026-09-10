@@ -163,8 +163,8 @@ params:
 
   socialIcons:
     - name: rss
-      title: RSS
-      url: "/index.xml"
+      title: 订阅
+      url: "/subscribe"
     #- name: github
     #  title: View Source on Github
     #  url: "https://github.com/haitai/hugo"
