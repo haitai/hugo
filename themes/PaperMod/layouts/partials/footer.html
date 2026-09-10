@@ -213,3 +213,28 @@
     });
 </script>
 {{- end }}
+
+{{- /* 插入最后更新时间 */}}
+{{- if .IsHome }}
+<script>
+    document.querySelectorAll('article.first-entry > div.entry-content').forEach((cblock) => {
+        {{- $pctx := . }}
+        {{- if .IsHome }}{{ $pctx = site }}{{ end }}
+        {{- $pages := slice }}
+        {{- if or $.IsHome $.IsSection }}
+        {{- $pages = $pctx.RegularPages }}
+        {{- else }}
+        {{- $pages = $pctx.Pages }}
+        {{- end }}
+        {{- $pages = where $pages "Params.hiddenInRss" "!=" true -}}
+        {{- $limit := site.Config.Services.RSS.Limit }}
+        {{- if ge $limit 1 }}
+        {{- $pages = $pages | first $limit }}
+        {{- end }}
+        const lastupdate = document.createElement('p');
+        lastupdate.classList.add('last-update');
+        lastupdate.innerHTML = '最后更新：{{ (index $pages.ByLastmod.Reverse 0).Lastmod.Format "2006年1月02日 15:04" | safeHTML }}';
+        cblock.appendChild(lastupdate);
+    });
+</script>
+{{- end }}
