@@ -14,14 +14,15 @@ if not defined title goto input
 if "%title:~0,1%"==" " set "title=%title:~1%" & goto trim
 if "%title:~-1%"==" " set "title=%title:~0,-1%" & goto trim
 if "%title%"=="" goto input
+set "title=%title: =-%"
 
-hugo new "posts/%today%-%title%/index.md"
+hugo new "posts/%title%/index.md"
 if errorlevel 1 (
     echo Failed to create. Check the title for invalid Windows characters (e.g. / : * ? " < > |).
     pause
     exit /b 1
 )
 
-notepad content/posts/%today%-%title%/index.md
-echo Created post "%today%-%title%" successfully!
+notepad content/posts/%title%/index.md
+echo Created post "%title%" successfully!
 pause
