@@ -117,8 +117,8 @@ outputs:
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  description: "Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod"
-  author: Theme PaperMod
+  description: "A blog powered by hugo, but nothing here."
+  author: Haitai
   # author: ["Me", "You"] # multiple authors
   dateFormat: "2006年1月2日"
   defaultTheme: auto
