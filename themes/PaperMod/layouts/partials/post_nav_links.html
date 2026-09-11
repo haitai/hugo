@@ -17,7 +17,12 @@
   <a class="next" href="{{ .Permalink }}">
     <span class="title">{{ i18n "next_post" }} »</span>
     <br>
-    <span>{{- .Name -}}</span>
+    <span>{{- $name := .Name }}
+    {{- if eq .Type "status" -}}
+    {{- $name = .Date | time.Format "2006年1月2日 15:04" -}}
+    {{- end -}}
+    {{- $name -}}
+    </span>
   </a>
   {{- end }}
 </nav>
