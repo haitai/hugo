@@ -91,3 +91,6 @@
   translation: "提示"
 - id: admonitions.warning
   translation: "警告"
+
+- id: backlinks_title
+  translation: '链接到此页面'

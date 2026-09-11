@@ -2,10 +2,10 @@
 {{- range site.RegularPages -}}
     {{- if and (not .Params.searchHidden) (ne .Layout `archives`) (ne .Layout `search`) (ne .Layout `subscribe`)  }}
         {{- $title := "" }}
-        {{- if .Title }}
-            {{- $title = .Title }}
-        {{- else if eq .Type "status" }}
+        {{- if eq .Type "status" }}
             {{- $title = substr (replaceRE "\\s+" " " (.Plain | strings.TrimSpace)) 0 25 }}
+        {{- else }}
+            {{- $title = .Title }}
         {{- end }}
         {{- $.Scratch.Add "index" (dict "title" $title "content" .Plain "permalink" .Permalink "summary" .Summary) -}}
     {{- end }}

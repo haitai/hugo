@@ -8,7 +8,7 @@
 {{- end }}
 
 {{- /* Title */}}
-<title>{{ if .IsHome }}{{ else }}{{ if .Title }}{{ .Title }}{{- else if eq .Type "status" }}{{- substr (replaceRE "\\s+" " " (.Plain | strings.TrimSpace)) 0 25 }}{{ end }} | {{ end }}{{ site.Title }}</title>
+<title>{{ if .IsHome }}{{ else }}{{ if eq .Type "status" }}{{- substr (replaceRE "\\s+" " " (.Plain | strings.TrimSpace)) 0 25 }}{{- else }}{{ .Title }}{{ end }} | {{ end }}{{ site.Title }}</title>
 
 {{- /* Meta */}}
 {{- if .IsHome }}

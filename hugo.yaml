@@ -114,6 +114,14 @@ outputs:
     - HTML
     - RSS
     - JSON
+    - backlinks
+outputFormats:
+  backlinks:
+    mediaType: application/json
+    baseName: backlinks
+    isPlainText: true
+    notAlternative: true
+    weight: 1
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
@@ -220,6 +228,10 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+    renderHooks:
+      link:
+        useEmbedded: always
+
   highlight:
     noClasses: false
     # anchorLineNos: true

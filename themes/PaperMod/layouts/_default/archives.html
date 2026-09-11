@@ -70,7 +70,7 @@
       {{- if eq .Kind "page" }}
       <div class="archive-entry">
         <h3 class="archive-entry-title entry-hint-parent">
-          {{- if .Title }}
+          {{- if eq .Type "post" -}}
           {{- .Title | markdownify }}
           {{- else }}
           {{ $plainText := .Content | plainify }}

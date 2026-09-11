@@ -183,3 +183,6 @@ This is a note notice.
 {{< notice normal >}}
 This is a very good tip with a different title.
 {{< /notice >}}
+
+## Test Backlink
+[Test Backlink](/posts/test-backlink/)

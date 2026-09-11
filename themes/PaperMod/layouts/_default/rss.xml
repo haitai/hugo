@@ -58,7 +58,7 @@
     {{- if and (ne .Layout `search`) (ne .Layout `archives`) (ne .Layout `subscribe`) }}
     <item>
       <title>
-        {{- if .Title }}
+        {{- if eq .Type "post" -}}
           {{- .Title | markdownify }}
           {{- else }}
           {{ $plainText := .Content | plainify }}

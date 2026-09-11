@@ -1,0 +1,11 @@
+.backlinks{
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    font-size: small;
+    color: var(--secondary);
+    padding: 14px;
+}
+.backlinks ol{
+    padding-inline-start: 14px;
+    margin: 0;
+}
