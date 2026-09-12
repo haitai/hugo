@@ -1,0 +1,24 @@
+{{$URL := .Get 0}}
+{{ with .Site.GetPage $URL }}
+<div class="post-preview">
+  <a target="_blank" href="{{ .Permalink }}" class="post-preview-a">
+    <div class="post-preview-meta">
+      <div class="post-preview-middle">
+        {{- if eq .Type "status" -}}
+        <span class="post-meta-img"><img src="{{- site.Params.status_avatar }}" class=""></span>
+        <span class="post-meta-title">{{- site.Params.author }}</span>
+        <span class="post-meta-date"> · {{ .Date.Format ( default "2006年1月2日 15:04") }}</span>
+        {{- else }}
+        <span class="post-meta-img"><img src="{{- site.Params.post_avatar }}" class=""></span>
+        <span class="post-meta-title">{{ .Title }}</span>
+        <span class="post-meta-date"> · {{ .Date.Format ( default "2006年1月2日") }}</span>
+        {{- end }}
+        <section style="max-height:105px;overflow:hidden;" class="post-preview--excerpt">
+          {{ .Summary | plainify}}
+        </section>
+      </div>
+    </div>
+  </a>
+</div>
+
+{{ end }}

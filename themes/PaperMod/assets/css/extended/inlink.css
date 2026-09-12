@@ -1,0 +1,31 @@
+.post-preview{
+  margin:1em auto;
+  padding:12px;
+  position:relative;
+  display:flex;
+  border: 1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:0 1px 2px var(--code-bg),0 0 1px var(--code-bg);
+}
+.post-preview .post-preview-a{
+  box-shadow:none;
+}
+.post-preview-meta{
+  overflow:hidden;
+}
+.post-preview-middle {
+  line-height:28px;
+}
+.post-meta-img{
+  display: inline-block;
+  height: 24px;
+  vertical-align: middle;}
+.post-meta-img img{
+  width: 24px;
+  border-radius: 50%;
+  margin: 0;
+}
+.post-meta-date{
+  color: var(--secondary);
+  font-size: 14px;
+}

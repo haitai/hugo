@@ -128,7 +128,8 @@ params:
   description: "A blog powered by hugo, but nothing here."
   author: Haitai
   # author: ["Me", "You"] # multiple authors
-  avatar: "/avatar.png"
+  post_avatar: "/favicon.png"
+  status_avatar: "/avatar.png"
   dateFormat: "2006年1月2日"
   defaultTheme: auto
   # disableThemeToggle: true

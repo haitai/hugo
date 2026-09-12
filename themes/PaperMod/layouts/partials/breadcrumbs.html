@@ -12,10 +12,8 @@
 
     {{- if (and ($bc_pg) (gt (len . ) 0))}}
 	<div class="breadcrumbs">
-	    <a href="{{ "" | absLangURL }}">{{ i18n "home" | default "Home" }}</a>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-                <polyline points="9 18 15 12 9 6"></polyline>
-            </svg><a href="{{ $bc_pg.Permalink }}">{{ $bc_pg.Name }}</a>
+	    <a href="{{ "" | absLangURL }}"><svg width="28" height="28" viewBox="0 0 10.5 10.5" fill="none" xmlns="http://www.w3.org/2000/svg"><g stroke-width="0"/><g stroke-linecap="round" stroke-linejoin="round"/><path d="M2.625 5.25h5.25m-5.25 0 2.188 -2.188M2.625 5.25l2.188 2.188" stroke="currentColor" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+   <a href="{{ $bc_pg.Permalink }}">{{ $bc_pg.Name }}</a>
 	</div>
     {{- end }}
 

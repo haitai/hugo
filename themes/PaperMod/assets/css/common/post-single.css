@@ -40,7 +40,8 @@
 	color: var(--secondary);
 }
 .breadcrumbs svg {
-    height: 1em;
+    vertical-align: middle;
+    margin-right: 0.5em;
 }
 
 .post-meta .i18n_list li a,
