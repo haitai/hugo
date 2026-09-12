@@ -21,6 +21,10 @@ This article offers a sample of basic Markdown syntax that can be used in Hugo c
 
 <!--more-->
 
+There is a more tag above, but invisible.
+{{< sidenote >}}
+I know why, but I can't tell you. Besides, I like the spare look of this site without ads.
+{{< /sidenote >}}
 ## Headings
 
 The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.

@@ -1,0 +1,36 @@
+body {
+  counter-reset: sidenote-counter;
+}
+.sidenote-number {
+    display: none;
+    @media (min-width: 960px) {
+        display: inline;
+        counter-increment: sidenote-counter;
+    }   
+}
+.sidenote {
+  float: right;
+  position: relative;
+  margin-right: -18vw;
+  width: 40%;
+  max-width: 200px;
+  padding: 5px;
+  border-radius: var(--radius);
+}
+.sidenote::before {
+  content: counter(sidenote-counter);
+  position: relative;
+  font-size: 0.9em;
+  font-weight: 700;
+  vertical-align: super;
+  margin-right: 0.25rem
+}
+.sidenote-number::after {
+  content: counter(sidenote-counter);
+  vertical-align: super;
+  font-size: 0.8em;
+  font-weight: 700;
+}
+.sidenote-number:hover .sidenote {
+  background-color: var(--code-bg);
+}
