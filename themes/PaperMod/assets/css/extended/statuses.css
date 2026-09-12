@@ -22,5 +22,10 @@
 
 .status-content {
     margin-top: 0.3rem;
-    font-size: 24px;
+    font-size: 16px;
 }
+.status-content .status-tag-a{box-shadow:none;margin-right: 5px}
+.woo-box{display: flex;}
+.woo-avatar{width: 3.25rem;height: 3.25rem;margin-right:10px}
+.woo-avatar-img{border-radius: 50%}
+.woo-time ._time_{color:var(--secondary)}

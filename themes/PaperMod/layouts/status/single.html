@@ -5,27 +5,32 @@
   {{- partial "breadcrumbs.html" . }}
   </header>
 
+<div class="woo-box">
+  <div class="woo-avatar">
+    <img src="{{- site.Params.avatar }}" class="woo-avatar-img">
+  </div>
+
+  <div class="woo-info">
+    <div class="woo-author">
+      <span title="{{- site.Params.author }}">{{- site.Params.author }}</span>
+    </div>
+    <div class="woo-time post-meta">
+      <a class="_time_" title="" href="{{- .Permalink -}}">{{- .Date | time.Format "2006年1月2日 15:04" -}}</a>
+    </div>
+  </div>
+</div>
+
   {{- if .Content }}
   <div class="md-content status-content">
     {{- if not (.Param "disableAnchoredHeadings") }}
     {{- partial "anchored_headings.html" .Content -}}
-    {{- else }}{{ .Content }}{{ end }}
+    {{- else }}{{ .Content }}{{ end }} {{- range ($.GetTerms "tags") }}
+      <a href="{{ .Permalink }}" class="status-tag-a">#{{ .LinkTitle }}</a>{{- end }}
   </div>
   {{- end }}
 
-
-  {{- if not (.Param "hideMeta") }}
-  <div class="post-meta">
-    {{- partial "post_meta.html" . -}}
-  </div>
-  {{- end }}
     
   <footer class="post-footer">
-    <ul class="post-tags">
-      {{- range ($.GetTerms "tags") }}
-      <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
-      {{- end }}
-    </ul>
     {{ partial "backlinks.html" . }}
   </footer>
 </article>

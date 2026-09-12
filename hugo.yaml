@@ -128,6 +128,7 @@ params:
   description: "A blog powered by hugo, but nothing here."
   author: Haitai
   # author: ["Me", "You"] # multiple authors
+  avatar: "/avatar.png"
   dateFormat: "2006年1月2日"
   defaultTheme: auto
   # disableThemeToggle: true
@@ -153,8 +154,8 @@ params:
 
   profileMode:
     enabled: false
-    title: PaperMod
-    imageUrl: "#"
+    title: Haitai
+    imageUrl: "avatar.png"
     imageTitle: my image
     # imageWidth: 120
     # imageHeight: 120
