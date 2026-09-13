@@ -4,11 +4,16 @@
 }
 
 .archive-year {
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .archive-year:not(:last-of-type) {
-    border-bottom: 2px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.archive-year .archive-label{
+    display: block;
+    margin-bottom: 10px;
 }
 
 .archive-month {
@@ -41,4 +46,14 @@
 .archive-meta {
     color: var(--secondary);
     font-size: 14px;
+}
+
+.archive-group{
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 15px;
+    margin-top: 20px;
+}
+
+.archive-label{
+
 }

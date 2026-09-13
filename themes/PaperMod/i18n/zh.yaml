@@ -1,3 +1,12 @@
+- id: Categories
+  translation: "分类"
+- id: Tags
+  translation: "标签"
+- id: Series
+  translation: "系列"
+- id: Date
+  translation: "日期"
+
 - id: prev_page
   translation: "上一页"
 
