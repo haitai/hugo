@@ -45,7 +45,7 @@ languages:
           url: search/
           weight: 20
 
-        #- name: Source
+        #- name: 源码
         #  url: https://github.com/haitai/hugo
 
 #  fr:
@@ -232,7 +232,7 @@ markup:
       unsafe: true
     renderHooks:
       link:
-        useEmbedded: always
+        useEmbedded: auto
 
   highlight:
     noClasses: false
