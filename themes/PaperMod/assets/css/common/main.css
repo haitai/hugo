@@ -74,29 +74,26 @@ pre {
     position: relative;
 }
 
-.copy-code {
+.copy-code,.copy-link {
     display: none;
     position: absolute;
-    top: 4px;
-    right: 4px;
-    color: rgba(255, 255, 255, 0.8);
-    background: rgba(78, 78, 78, 0.8);
-    border-radius: var(--radius);
-    padding: 0 5px;
-    font-size: 14px;
-    user-select: none;
-}
-.copy-link {
-    display: none;
-    position: absolute;
-    vertical-align: middle;
-    right: 15px;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 1);
     background: rgba(78, 78, 78, 1);
     border-radius: var(--radius);
     padding: 0 5px;
     font-size: 14px;
     user-select: none;
+}
+.copy-code{
+    top: 4px;
+    right: 4px;
+}
+.copy-link {
+    vertical-align: middle;
+    right: 15px;
+}
+@media screen and (max-width: 768px) {
+    .copy-code,.copy-link {display: block;}
 }
 div.highlight:hover .copy-code,
 pre:hover .copy-code,

@@ -1,7 +1,5 @@
 .x-highlight-wrapper :nth-child(2) {
-  margin-top: 0 !important;
-  border-top-left-radius: 0 !important;
-  border-top-right-radius: 0 !important;
+
 }
 
 /* --hljs-bg 和 --radius 是 PaperMod 主题提供的变量 */
