@@ -176,7 +176,8 @@
 .md-content blockquote {
     margin: 1rem 0;
     padding-inline-start: 1rem;
-    border-inline-start: 0.3rem solid var(--primary);
+    border-inline-start: 4px solid var(--primary);
+    border-radius:4px;
 }
 
 .md-content hr {
