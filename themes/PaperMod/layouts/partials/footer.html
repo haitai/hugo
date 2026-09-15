@@ -238,3 +238,43 @@
     });
 </script>
 {{- end }}
+
+{{- /* 弹出脚注 */}}
+<script>
+window.addEventListener("load", function () {
+    const popupWrapper = document.getElementById("ex-popup-wrapper");
+  
+    // Create main container that will hold the footnote content
+    const popupContentWrapper = document.getElementById("ex-footer-content");
+    const popupContent = popupContentWrapper.appendChild(document.createElement("div"));
+    popupContent.id = "popup-content";
+    const popupIndex = popupContentWrapper.insertBefore(document.createElement("div"), popupContent);
+    popupIndex.id = "popup-index";
+  
+    // Close button
+    document.getElementById("ex-footer-close").addEventListener("click", () => {
+      popupWrapper.style.display = "none";
+    });
+  
+    // Patch the existing footnotes
+    document.querySelectorAll(".footnote-ref").forEach(fnRef =>
+      fnRef.addEventListener("click", event => {
+        event.preventDefault();
+  
+        const index = fnRef.hash.substring(4);
+        popupIndex.innerHTML = index + ".";
+  
+        const footnote = document.getElementById("fn:" + index).cloneNode(true);
+        const backrefElement = footnote.querySelector(".footnote-backref");
+        backrefElement.parentNode.removeChild(backrefElement); // Remove the backref since it does not make sense in the expanded footnote
+        popupContent.innerHTML = footnote.innerHTML.trim();
+  
+        popupWrapper.style.display = "grid";
+      })
+    );
+  
+    window.addEventListener("scroll", () => {
+      popupWrapper.style.display = "none";
+    });
+  });  
+</script>

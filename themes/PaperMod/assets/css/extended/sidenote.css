@@ -34,3 +34,59 @@ body {
 .sidenote-number:hover .sidenote {
   background-color: var(--code-bg);
 }
+
+#ex-footnote {
+  position: fixed;
+  font-size: $font-size-small;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+  max-height: 20%;
+}
+
+#ex-popup-wrapper {
+  display: none;
+  grid-template-columns: auto 50px;
+  grid-template-rows: minmax(0, 1fr);
+  padding-top: 0;
+  background-color: var(--theme);
+  border-top: 5px solid var(--primary);
+  max-height: calc(20vh);
+}
+
+#ex-footer-content {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+#ex-footer-close {
+  grid-column: 2;
+  grid-row: 1;
+  text-align: center;
+  font-size: 2em;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--primary);
+  }
+  svg {vertical-align: middle;}
+}
+
+#popup-content {
+  text-align: left;
+  margin-left: $font-size-small;
+  overflow-y: auto;
+
+  p {
+    margin: 0;
+  }
+}
+
+#popup-index {
+  padding: 0 0 0 1rem;
+  flex-shrink: 0;
+}
