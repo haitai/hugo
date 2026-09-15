@@ -16,57 +16,71 @@ cover:
   caption: "图片说明文字" # 图片下方的说明（可选）
   relative: true # 如果你使用的是绝对路径或 static 目录，设为 false
 ---
-
-This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.
+这是一篇包含本主题支持的各种基本 Markdown 语法的文章。
 
 <!--more-->
 
-There is a more tag above, but invisible.
-{{< sidenote >}}
-I know why, but I can't tell you. Besides, I like the spare look of this site without ads.
+# 一级标题
+
+## 二级标题
+
+### 三级标题
+
+#### 四级标题
+
+##### 五级标题
+
+###### 六级标题
+
+## 段落和文本格式
+
+这是一个普通段落，可以包含**粗体文本**、*斜体文本*、***粗斜体文本***、~~删除线~~、`行内代码`和[链接文本](https://example.com)。
+
+这是另一个段落，用于测试段落之间的间距。
+
+## 图片
+
+![示例图片](/android-chrome-192x192.png "示例图片")
+
+## 链接
+
+这是一个[内部链接](/posts/test-backlink/)，顺便测试内部反向链接。
+
+这是一个[外部链接](https://github.com/haitai/hugo)，它带有一个箭头图标。
+
+这是一个[带标题的链接](https://example.com "链接标题")。
+
+这是一个引用式链接：[引用链接][1]
+
+[1]: https://example.com "引用链接标题"
+
+## 脚注和旁注
+
+这是一个包含脚注的段落[^1]。
+
+这里是另一个脚注[^note]。
+
+这里是一个旁注。{{< sidenote >}}
+当前旁注的显示方式是：大屏上显示，小屏幕比如手机上会自动隐藏。
 {{< /sidenote >}}
-## Headings
 
-The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
+[^1]: 这是第一个脚注的内容。
 
-# H1
+[^note]: 这是命名脚注的内容。
 
-## H2
+## 引用块
 
-### H3
+> 这是一个简单的引用块。
+> 
+> 引用块可以包含多个段落。
 
-#### H4
+> 这是一个嵌套引用的例子：
+> 
+> > 这是嵌套引用的内容。
+> > 
+> > 可以有多层嵌套。
 
-##### H5
-
-###### H6
-
-## Paragraph
-
-Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
-
-Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.
-
-## Blockquotes
-
-The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a `footer` or `cite` element, and optionally with in-line changes such as annotations and abbreviations.
-
-#### Blockquote without attribution
-
-> Tiam, ad mint andaepu dandae nostion secatur sequo quae.
-> **Note** that you can use _Markdown syntax_ within a blockquote.
-
-
-#### Blockquote with attribution
-
-> Don't communicate by sharing memory, share memory by communicating.
->
-> — <cite>Rob Pike[^1]</cite>
-
-
-[^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
-
-#### Blockquote with Hugo-admonitions
+### 更多引用块样式
 
 > [!TIP]
 > Warning: This operation will delete all data.
@@ -83,72 +97,109 @@ The blockquote element represents content that is quoted from another source, op
 > > [!TODO] Yes!, they can.
 > > > [!EXAMPLE]  You can even use multiple layers of nesting.
 
+## 另一种样式的 Callouts
+{{< notice warning >}}
+This is a warning notice. Be warned!
+{{< /notice >}}
 
-## Tables
+{{< notice tip "自定义标题" >}}
+This is a very good tip with a different title.
+{{< /notice >}}
 
-Tables aren't part of the core Markdown spec, but Hugo supports them out-of-the-box.
+{{< notice info >}}
+This is a info notice.
+{{< /notice >}}
+{{< notice note>}}
+This is a note notice.
+{{< /notice >}}
 
-| Name  | Age |
-| ----- | --- |
-| Bob   | 27  |
-| Alice | 23  |
+{{< notice normal >}}
+This is a very good tip with a different title.
+{{< /notice >}}
+## 表格
 
-#### Inline Markdown within tables
+| 左对齐 | 居中对齐 | 右对齐 |
+|:-------|:--------:|-------:|
+| 内容 1 | 内容 2   | 内容 3 |
+| 较长的内容 | 中等     | 短     |
+| 数据 A | 数据 B   | 数据 C |
+
+
+### 表格行内支持MD语法
 
 | Italics   | Bold     | Code   |
 | --------- | -------- | ------ |
 | _italics_ | **bold** | `code` |
 
-## List Types
+## 列表
 
-#### Ordered List
+### 无序列表
 
-1. First item
-2. Second item
-3. Third item
+- 第一项
+- 第二项
+  - 嵌套项 1
+  - 嵌套项 2
+    - 更深层的嵌套项
+- 第三项
 
-#### Unordered List
+### 有序列表
 
-- List item
-- Another item
-- And another item
+1. 第一项
+2. 第二项
+   1. 嵌套有序项 1
+   2. 嵌套有序项 2
+      1. 更深层的嵌套项
+3. 第三项
 
-#### Nested Unordered list
+### 任务列表（复选框）
 
-- Fruit
-  - Apple
-  - Orange
-  - Banana
-- Dairy
-  - Milk
-  - Cheese
+- [x] 已完成的任务
+- [ ] 未完成的任务
+- [x] 另一个已完成的任务
+- [ ] 嵌套任务列表
+  - [x] 子任务 1（已完成）
+  - [ ] 子任务 2（未完成）
+  - [x] 子任务 3（已完成）
 
-#### Nested Ordered list
+### 定义列表
 
-1. Fruit
-    - Apple
-    - Orange
-    - Banana
-2. Dairy
-    1. Milk
-    2. Cheese
-3. Third item
-    1. Sub One
-    2. Sub Two
+术语 1
+: 这是术语 1 的定义。
 
-## Other Elements — abbr, sub, sup, kbd, mark
+术语 2
+: 这是术语 2 的定义。
+: 术语可以有多个定义。
 
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
 
-H<sub>2</sub>O
+## 代码
 
-X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
+### 行内代码
 
-Press <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd> to end the session.
+这是一个包含 `console.log('Hello World')` 的段落。
+### 代码块
 
-Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
+```javascript {lineNos=true hl_lines=[3,6,8] filename=main.js}
+function fibonacci(n) {
+  if (n <= 1) return n;
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
 
-## Syntax Highlight
+
+const result = fibonacci(10);
+console.log(`The 10th Fibonacci number is: ${result}`);
+
+// Async/Await
+const asyncFunction = async () => {
+  try {
+    const response = await fetch('/api/data');
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+};
+```
+### 含文件标题代码块
 
 ```css { title=".\assets\css\extended\codeblock.css"}
 .x-highlight-wrapper :nth-child(2) {
@@ -168,26 +219,59 @@ Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and ot
 }
 ```
 
-## Github style callouts
-{{< notice warning >}}
-This is a warning notice. Be warned!
-{{< /notice >}}
+## 标签页
 
-{{< notice tip "自定义标题" >}}
-This is a very good tip with a different title.
-{{< /notice >}}
+使用 `tabs` 和 `tab` 短代码来切换任意 Markdown 内容。
 
-{{< notice info >}}
-This is a info notice.
-{{< /notice >}}
-{{< notice note>}}
-This is a note notice.
-{{< /notice >}}
+{{< tabs >}}
+{{< tab "概览" >}}
+这个面板里可以放普通段落、`npm run dev` 这类行内代码，以及强调文本。
 
-{{< notice normal >}}
-This is a very good tip with a different title.
-{{< /notice >}}
+- 公共说明
+- 初始化清单
+- 任意 Markdown 块
+{{< /tab >}}
+{{< tab "代码" >}}
+```javascript {filename=fetch-user.js}
+async function fetchUser(id) {
+  const response = await fetch(`/api/users/${id}`);
+  if (!response.ok) throw new Error("User not found");
+  return response.json();
+}
+```
+{{< /tab >}}
+{{< tab "结果" >}}
+> `tabs` 短代码本身不绑定代码块。
+>
+> 每个面板都可以混合段落、代码块、列表、引用或图片。
 
-## Test Links
-[Test Backlink](/posts/test-backlink/)
-[Github](https://github.com/haitai/hugo)
+{{< /tab >}}
+
+{{< /tabs >}}
+
+
+## 详情
+
+<details>
+<summary>点击展开详情</summary>
+
+这是折叠的详细内容。
+
+你可以在这里包含任何 Markdown 语法：
+
+- 列表项
+- **粗体文本**
+- `代码`
+
+</details>
+
+## 其他格式 — 属性, 下标, 上标, 键盘, 高亮
+<abbr title="Graphics Interchange Format">GIF</abbr> 是一种图片格式。
+
+H<sub>2</sub>O 是水的化学分子式。
+
+E = mc<sup>2</sup> 是爱因斯坦的质能方程。
+
+按 <kbd>Ctrl</kbd> + <kbd>C</kbd> 复制文本。
+
+这是一个包含<mark>高亮文本</mark>的段落。
