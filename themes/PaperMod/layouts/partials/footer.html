@@ -80,6 +80,8 @@
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function (e) {
+            // 脚注链接由 footnot popup 脚本处理，跳过此处平滑滚动
+            if (anchor.classList.contains("footnote-ref")) return;
             e.preventDefault();
             var id = this.getAttribute("href").substr(1);
             if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -243,38 +245,36 @@
 <script>
 window.addEventListener("load", function () {
     const popupWrapper = document.getElementById("ex-popup-wrapper");
-  
-    // Create main container that will hold the footnote content
     const popupContentWrapper = document.getElementById("ex-footer-content");
     const popupContent = popupContentWrapper.appendChild(document.createElement("div"));
     popupContent.id = "popup-content";
     const popupIndex = popupContentWrapper.insertBefore(document.createElement("div"), popupContent);
     popupIndex.id = "popup-index";
-  
-    // Close button
+
     document.getElementById("ex-footer-close").addEventListener("click", () => {
-      popupWrapper.style.display = "none";
+        popupWrapper.style.display = "none";
     });
-  
-    // Patch the existing footnotes
+
+    let footnotePopupShown = false;
     document.querySelectorAll(".footnote-ref").forEach(fnRef =>
-      fnRef.addEventListener("click", event => {
-        event.preventDefault();
-  
-        const index = fnRef.hash.substring(4);
-        popupIndex.innerHTML = index + ".";
-  
-        const footnote = document.getElementById("fn:" + index).cloneNode(true);
-        const backrefElement = footnote.querySelector(".footnote-backref");
-        backrefElement.parentNode.removeChild(backrefElement); // Remove the backref since it does not make sense in the expanded footnote
-        popupContent.innerHTML = footnote.innerHTML.trim();
-  
-        popupWrapper.style.display = "grid";
-      })
+        fnRef.addEventListener("click", event => {
+            event.preventDefault();
+            footnotePopupShown = true;
+            const index = fnRef.hash.substring(4);
+            popupIndex.innerHTML = index + ".";
+            const footnote = document.getElementById("fn:" + index).cloneNode(true);
+            const backrefElement = footnote.querySelector(".footnote-backref");
+            backrefElement.parentNode.removeChild(backrefElement);
+            popupContent.innerHTML = footnote.innerHTML.trim();
+            popupWrapper.style.display = "grid";
+        })
     );
-  
+
     window.addEventListener("scroll", () => {
-      popupWrapper.style.display = "none";
+        if (popupWrapper.style.display === "grid" && !footnotePopupShown) {
+            popupWrapper.style.display = "none";
+        }
+        footnotePopupShown = false;
     });
-  });  
+});
 </script>

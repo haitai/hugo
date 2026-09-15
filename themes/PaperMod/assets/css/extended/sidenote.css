@@ -51,7 +51,7 @@ body {
   grid-template-rows: minmax(0, 1fr);
   padding-top: 0;
   background-color: var(--theme);
-  border-top: 5px solid var(--primary);
+  border-top: 2px solid var(--secondary);
   max-height: calc(20vh);
 }
 
