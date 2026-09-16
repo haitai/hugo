@@ -1,0 +1,21 @@
+{{- /* =========================================================================
+     Lightbox 资源引入（图片点击放大）
+     文件：layouts/partials/lightbox.html
+     开关：hugo.yaml -> params.lightbox.enabled
+     被调用处：themes/PaperMod/layouts/partials/head.html
+     说明：读取项目级 assets 源文件，经 Hugo 资源管线压缩(minify)+指纹(fingerprint)后
+           注入 <head>。修改样式/逻辑请编辑：
+             assets/css/extended/lightbox.css
+             assets/js/lightbox.js
+     ========================================================================= */ -}}
+{{- $cfg := site.Params.lightbox | default (dict) -}}
+{{- if $cfg.enabled -}}
+  {{- with resources.Get "css/extended/lightbox.css" -}}
+    {{- $css := . | minify | fingerprint -}}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+  {{- end -}}
+  {{- with resources.Get "js/lightbox.js" -}}
+    {{- $js := . | minify | fingerprint -}}
+    <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+  {{- end -}}
+{{- end -}}

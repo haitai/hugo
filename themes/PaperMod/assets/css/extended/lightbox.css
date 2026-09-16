@@ -1,0 +1,264 @@
+/* ==========================================================================
+ * Lightbox — 图片点击放大 / 查看器 样式
+ * 配套脚本：assets/js/lightbox.js
+ * 引入位置：layouts/partials/lightbox.html（走 Hugo 资源管线压缩+指纹）
+ * 开关：hugo.yaml -> params.lightbox.enabled
+ *
+ * 结构（由 JS 动态生成并插入 body）：
+ *   .lightbox-overlay
+ *     ├─ .lightbox-content  > .lightbox-image
+ *     ├─ .lightbox-close
+ *     ├─ .lightbox-download
+ *     ├─ .lightbox-nav.lightbox-prev / .lightbox-next
+ *     └─ .lightbox-zoom-controls > .lightbox-zoom-btn + .lightbox-zoom-level
+ * ========================================================================== */
+
+/* ---------- 遮罩层：全屏、居中、背景虚化 ---------- */
+.lightbox-overlay {
+  display: none; /* 默认隐藏，JS 打开时改为 flex */
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .92);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+  animation: lightbox-fade-in .25s ease;
+}
+
+/* 深色模式：同时兼容 PaperMod 的 html[data-theme="dark"] 与 body.dark */
+body.dark .lightbox-overlay,
+html[data-theme="dark"] .lightbox-overlay {
+  background: rgba(0, 0, 0, .96);
+}
+
+/* ---------- 图片容器 ---------- */
+.lightbox-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 90vw;
+  max-height: 88vh;
+  animation: lightbox-zoom-in .25s ease;
+}
+
+.lightbox-image {
+  max-width: 90vw;
+  max-height: 88vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, .6);
+  border: 1px solid rgba(255, 255, 255, 8%);
+  transform-origin: center center;
+  user-select: none;
+  -webkit-user-drag: none;
+  display: block;
+  image-rendering: auto;
+  touch-action: none; /* 交给 JS 处理触摸手势 */
+}
+
+body.dark .lightbox-image,
+html[data-theme="dark"] .lightbox-image {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, .85);
+}
+
+/* ---------- 关闭按钮（右上角） ---------- */
+.lightbox-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, .18);
+  background: rgba(255, 255, 255, 8%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: rgba(255, 255, 255, .85);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  z-index: 10001;
+  transition: background .2s ease, border-color .2s ease, color .2s ease;
+}
+
+.lightbox-close svg {
+  transition: transform .3s cubic-bezier(.34, 1.56, .64, 1);
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, .16);
+  border-color: rgba(255, 255, 255, .35);
+  color: #fff;
+}
+
+.lightbox-close:hover svg {
+  transform: rotate(90deg) scale(1.15);
+}
+
+/* ---------- 下载原图按钮（关闭按钮左侧，仅有 data-download 时显示） ---------- */
+.lightbox-download {
+  position: absolute;
+  top: 16px;
+  right: 64px;
+  min-height: 36px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, .18);
+  background: rgba(255, 255, 255, 8%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: rgba(255, 255, 255, .88);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 13px;
+  z-index: 10001;
+  font-size: 13px;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background .2s ease, border-color .2s ease, color .2s ease;
+}
+
+.lightbox-download:hover {
+  background: rgba(255, 255, 255, .16);
+  border-color: rgba(255, 255, 255, .35);
+  color: #fff;
+}
+
+.lightbox-download[hidden] {
+  display: none;
+}
+
+/* ---------- 键盘焦点可见（无障碍） ---------- */
+.lightbox-download:focus-visible,
+.lightbox-close:focus-visible,
+.lightbox-nav:focus-visible,
+.lightbox-zoom-btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* ---------- 上一张 / 下一张 ---------- */
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, .2);
+  background: rgba(0, 0, 0, .45);
+  color: #fff;
+  font-size: 26px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s;
+  z-index: 10001;
+  line-height: 1;
+  padding: 0;
+}
+
+.lightbox-nav:hover {
+  background: rgba(255, 255, 255, .18);
+}
+
+.lightbox-nav[hidden] {
+  display: none; /* 分组只有一张图时隐藏 */
+}
+
+.lightbox-prev {
+  left: 14px;
+}
+
+.lightbox-next {
+  right: 14px;
+}
+
+/* ---------- 底部缩放控件 ---------- */
+.lightbox-zoom-controls {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(0, 0, 0, .5);
+  border: 1px solid rgba(255, 255, 255, .15);
+  border-radius: 24px;
+  padding: 5px 10px;
+  z-index: 10001;
+  white-space: nowrap;
+}
+
+.lightbox-zoom-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background: 0 0;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .15s;
+  line-height: 1;
+  padding: 0;
+}
+
+.lightbox-zoom-btn:hover {
+  background: rgba(255, 255, 255, .15);
+}
+
+.lightbox-zoom-level {
+  color: rgba(255, 255, 255, .75);
+  font-size: 12px;
+  min-width: 36px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  font-family: ui-monospace, monospace;
+}
+
+/* ---------- 动画 ---------- */
+@keyframes lightbox-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes lightbox-zoom-in {
+  from { transform: scale(.85); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+
+/* ---------- 移动端适配 ---------- */
+@media (max-width: 640px) {
+  .lightbox-nav { width: 36px; height: 36px; font-size: 20px; }
+  .lightbox-prev { left: 8px; }
+  .lightbox-next { right: 8px; }
+  .lightbox-zoom-controls { bottom: 10px; }
+}
+
+/* ---------- 正文图片的“可点击放大”提示 ---------- */
+/* 仅在正文容器内、且未加 .no-lightbox 的图片上生效 */
+.post-single .md-content img:not(.no-lightbox),
+.post-content img:not(.no-lightbox),
+.post-body img:not(.no-lightbox) {
+  cursor: zoom-in;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.post-single .md-content img:not(.no-lightbox):hover,
+.post-content img:not(.no-lightbox):hover,
+.post-body img:not(.no-lightbox):hover {
+  transform: scale(1.015);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .18);
+}
