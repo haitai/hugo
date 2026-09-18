@@ -37,12 +37,12 @@ body {
 
 #ex-footnote {
   position: fixed;
-  font-size: $font-size-small;
+  font-size: 0.9em;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 99999;
-  max-height: 20%;
+  max-height: 25%;
 }
 
 #ex-popup-wrapper {
@@ -52,7 +52,7 @@ body {
   padding-top: 0;
   background-color: var(--theme);
   border-top: 2px solid var(--secondary);
-  max-height: calc(20vh);
+  max-height: calc(25vh);
 }
 
 #ex-footer-content {
@@ -69,9 +69,23 @@ body {
   text-align: center;
   font-size: 2em;
   cursor: pointer;
+  align-items: center;
+  justify-content: start; 
+  display: flex;
 
   &:hover {
     color: var(--primary);
+  }
+  .inline-svg{
+    background: var(--entry);
+    width: 36px;
+    height: 36px;
+    align-items: center;
+    display: flex;
+    justify-content: center; 
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgb(5 10 15/5%),0 7px 13px -3px rgb(5 10 15/.3);
+    transition: box-shadow .4s ease,transform .4s ease;
   }
   svg {vertical-align: middle;}
 }
