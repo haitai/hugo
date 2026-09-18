@@ -275,3 +275,9 @@ E = mc<sup>2</sup> 是爱因斯坦的质能方程。
 按 <kbd>Ctrl</kbd> + <kbd>C</kbd> 复制文本。
 
 这是一个包含<mark>高亮文本</mark>的段落。
+
+## PDF 渲染
+
+{{< pdf src="attachments/test.pdf#view=Fit&page=1" width="100%" height="500px" >}}
+
+{{< attachments folder="attachments" pattern="(test.pdf)" caption="点击下载" title="附件">}}

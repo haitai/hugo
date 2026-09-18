@@ -137,6 +137,7 @@ params:
   post_avatar: "/favicon.png"
   status_avatar: "/avatar.png"
   dateFormat: "2006年1月2日"
+  timeFormat: "2006年1月2日 15:04"
   defaultTheme: auto
   # disableThemeToggle: true
   ShowShareButtons: false

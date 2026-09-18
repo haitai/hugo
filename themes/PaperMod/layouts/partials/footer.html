@@ -235,7 +235,7 @@
         {{- end }}
         const lastupdate = document.createElement('p');
         lastupdate.classList.add('last-update');
-        lastupdate.innerHTML = '最后更新：{{ (index $pages.ByLastmod.Reverse 0).Lastmod.Format "2006年1月02日 15:04" | safeHTML }}';
+        lastupdate.innerHTML = '{{- T "last-update" | default "Last Update" -}}：{{ (index $pages.ByLastmod.Reverse 0).Lastmod.Format site.Params.timeFormat | safeHTML }}';
         cblock.appendChild(lastupdate);
     });
 </script>

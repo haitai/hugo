@@ -3,7 +3,7 @@
 {{- if not .Date.IsZero -}}
 {{- $dateFormat := site.Params.DateFormat }}
 {{- if eq .Type "status" -}}
-{{- $dateFormat = "2006年1月2日 15:04" -}}
+{{- $dateFormat = site.Params.timeFormat -}}
 {{- end -}}
 {{- $scratch.Add "meta" (slice (printf "<span title='%s'>%s</span>" (.Date) (.Date | time.Format $dateFormat))) }}
 {{- end }}

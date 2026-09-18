@@ -1,0 +1,40 @@
+section.attachments {
+  margin: 1.5rem 0;
+  position: relative;
+
+  label {
+    font-weight: 300;
+    margin: 0;
+    svg {
+    height: 18px;
+    width: 18px;
+    vertical-align: middle;
+    }
+  }
+
+  .attachments-files {
+    display: block;
+    font-size: 1rem;
+    margin: 0;
+
+    ul {
+      margin-top: 0;
+    }
+    a {
+      box-shadow:none;
+      svg{
+        margin-left:0.3em 
+      }
+    }
+
+    .attachment-size {
+      display: inline-block;
+      color: var(--secondary);
+    }
+  }
+
+  .new-tab {
+    padding-left: 0.1em;
+    padding-right: 0.1em;
+  }
+}

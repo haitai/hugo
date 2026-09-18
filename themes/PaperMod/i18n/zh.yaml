@@ -103,3 +103,8 @@
 
 - id: backlinks_title
   translation: '链接到此页面'
+
+- id: last-update
+  translation: '最后更新'
+- id: attachments
+  translation: '附件'

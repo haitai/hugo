@@ -1,0 +1,16 @@
+.md-content details {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+.md-content details summary {
+    cursor: pointer;
+    border-bottom: 1px solid var(--border);
+    padding: .5rem 1rem;
+}
+.md-content details>:not(summary) {
+    padding: .5rem 1rem 0;
+    margin-bottom: 0 !important;
+}
+.md-content details>:last-child {
+    padding-bottom: 1rem;
+}

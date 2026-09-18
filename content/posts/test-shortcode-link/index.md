@@ -14,5 +14,10 @@ series: []
 ```html
 { {<inlink "/posts/hello-world/">} } <!-- 使用时删除花括号中的空格 -->
 ```
-测试文章显示： {{<inlink "/posts/hello-world/">}}
-测试微博显示：  {{<inlink "/statuses/2026-09-11-174539/">}}
+测试文章显示：
+
+{{<inlink "/posts/hello-world/">}}
+
+测试微博显示：
+
+{{<inlink "/statuses/2026-09-11-174539/">}}

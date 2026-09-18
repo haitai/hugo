@@ -1,5 +1,5 @@
 ---
-title: {{ .Date | time.Format "2006年1月2日 15:04" }}
+title: {{ .Date | time.Format site.Params.timeFormat }}
 slug: {{ .Name }}
 date: {{ .Date }}
 type: status

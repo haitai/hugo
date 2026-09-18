@@ -15,7 +15,7 @@
       <span title="{{- site.Params.author }}">{{- site.Params.author }}</span>
     </div>
     <div class="woo-time post-meta">
-      <a class="_time_" title="" href="{{- .Permalink -}}">{{- .Date | time.Format "2006年1月2日 15:04" -}}</a>
+      <a class="_time_" title="" href="{{- .Permalink -}}">{{- .Date | time.Format site.Params.timeFormat -}}</a>
     </div>
   </div>
 </div>
