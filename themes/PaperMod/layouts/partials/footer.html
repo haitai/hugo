@@ -278,3 +278,82 @@ window.addEventListener("load", function () {
     });
 });
 </script>
+
+{{- /* 滑块调整页面宽度 */}}
+<script>
+const root = document.documentElement;
+const length = document.querySelector('.resize_length');
+const tip = document.querySelector('.resize_tip');
+const light = document.querySelector('.resize_light');
+
+const MIN_WIDTH = 720;
+const MAX_WIDTH = 1280;
+const STORAGE_KEY = 'main-width';
+
+let dragging = false;
+let startX = 0;
+let startWidth = 0;
+let trackWidth = 0;
+
+function setMainWidth(width, save = true) {
+  width = Math.max(MIN_WIDTH, Math.min(MAX_WIDTH, width));
+
+  root.style.setProperty('--main-width', `${width}px`);
+
+  const percent =
+    (width - MIN_WIDTH) / (MAX_WIDTH - MIN_WIDTH) * 100;
+
+  tip.style.left = `${percent}%`;
+  light.style.width = `${percent}%`;
+
+  if (save) {
+    localStorage.setItem(STORAGE_KEY, String(width));
+  }
+}
+
+function getMainWidth() {
+  return parseFloat(
+    getComputedStyle(root).getPropertyValue('--main-width')
+  ) || MIN_WIDTH;
+}
+
+// 页面加载时恢复宽度
+const savedWidth = parseFloat(localStorage.getItem(STORAGE_KEY));
+
+if (Number.isFinite(savedWidth)) {
+  setMainWidth(savedWidth, false);
+} else {
+  setMainWidth(getMainWidth(), false);
+}
+
+tip.addEventListener('pointerdown', event => {
+  dragging = true;
+  startX = event.clientX;
+  startWidth = getMainWidth();
+  trackWidth = length.getBoundingClientRect().width;
+
+  tip.setPointerCapture(event.pointerId);
+  event.preventDefault();
+});
+
+tip.addEventListener('pointermove', event => {
+  if (!dragging) return;
+
+  const deltaX = event.clientX - startX;
+  const deltaWidth =
+    deltaX / trackWidth * (MAX_WIDTH - MIN_WIDTH);
+
+  setMainWidth(startWidth + deltaWidth);
+});
+
+function stopDragging(event) {
+  dragging = false;
+
+  if (tip.hasPointerCapture(event.pointerId)) {
+    tip.releasePointerCapture(event.pointerId);
+  }
+}
+
+tip.addEventListener('pointerup', stopDragging);
+tip.addEventListener('pointercancel', stopDragging);
+</script>
