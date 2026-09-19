@@ -4,27 +4,53 @@
 }
 
 .archive-year {
-    margin-top: 20px;
+    position: relative;
+    padding: .1rem 0;
+    border-color: var(--border);
 }
+.archive-year:before{
+    position: absolute;
+    top: 0;
+    left: 1.5rem;
+    height: 100%;
+    border-left: 2px solid;
+    border-color: inherit;
+    content: "";
+    z-index: -1;
 
+}
 .archive-year:not(:last-of-type) {
-    border-bottom: 1px solid var(--border);
+    border-bottom: 0px solid var(--border);
 }
 
-.archive-year .archive-label{
+.archive-label{
     display: block;
-    margin-bottom: 10px;
+    padding-bottom: 10px;
 }
 
+.archive-year-header{
+    background: var(--code-bg);
+    margin-bottom:25px;
+}
+[data-theme=dark] .archive-year-header {
+    background: var(--theme);
+}
 .archive-month {
-    display: flex;
-    align-items: flex-start;
-    padding: 10px 0;
+
+    padding-left: 3rem;
+    position: relative;
 }
 
 .archive-month-header {
-    margin: 18px 0;
-    width: 200px;
+    background-color: var(--tertiary);
+    background-image: none;
+    left: 1.5rem;
+    padding: 3px 10px;
+    border-radius: var(--radius);
+    line-height: 2;
+    transform: translate(-50%, -50%) scale(.75);
+    margin-top: 20px;
+    position: absolute;
 }
 
 .archive-month:not(:last-of-type) {
@@ -33,15 +59,24 @@
 
 .archive-entry {
     position: relative;
-    padding: 5px;
-    margin: 10px 0;
+    display: block;
+    margin-left: 2rem;
+    padding: .5rem 0;
+    line-height: 2rem;
+    transition: color .15s;
 }
 
 .archive-entry-title {
-    margin: 5px 0;
-    font-weight: 400;
+    font-weight:400;
 }
-
+.archive-entry-title:before {
+    position: absolute;
+    top: 1rem;
+    left: -1rem;
+    content: "-";
+    opacity: .63;
+    transform: translateY(-50%);
+}
 .archive-count,
 .archive-meta {
     color: var(--secondary);
@@ -53,7 +88,6 @@
     padding-bottom: 15px;
     margin-top: 20px;
 }
-
-.archive-label{
-
+.archive-group:last-of-type{
+    border-bottom: 0px solid var(--border);
 }

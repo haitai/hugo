@@ -108,11 +108,12 @@
 {{- if site.Params.ShowAllPagesInArchive }}
 {{- $pages = site.RegularPages }}
 {{- end }}
-
+<div class="archive-group">
+<span class="archive-label">{{- T "Date" | default "Date" -}}</span>
 {{- range $pages.GroupByPublishDate "2006" }}
 {{- if ne .Key "0001" }}
 <div class="archive-year">
-  <span class="archive-label">{{- T "Date" | default "Date" -}}</span>
+
   {{- $year := replace .Key "0001" "" }}
   <h2 class="archive-year-header" id="{{ $year }}">
     <a class="archive-header-link" href="#{{ $year }}">
@@ -166,5 +167,5 @@
 </div>
 {{- end }}
 {{- end }}
-
+</div>
 {{- end }}{{/* end main */}}
