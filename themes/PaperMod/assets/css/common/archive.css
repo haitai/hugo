@@ -11,7 +11,7 @@
 .archive-year:before{
     position: absolute;
     top: 0;
-    left: 1.5rem;
+    left: 1.8rem;
     height: 100%;
     border-left: 2px solid;
     border-color: inherit;
@@ -44,7 +44,7 @@
 .archive-month-header {
     background-color: var(--tertiary);
     background-image: none;
-    left: 1.5rem;
+    left: 1.8rem;
     padding: 3px 10px;
     border-radius: var(--radius);
     line-height: 2;
@@ -71,11 +71,17 @@
 }
 .archive-entry-title:before {
     position: absolute;
-    top: 1rem;
-    left: -1rem;
-    content: "-";
+    top: 1em;
+    left: -3.2rem;
+    content: "";
     opacity: .63;
     transform: translateY(-50%);
+    display: inline-block;
+    height: 2px;
+    width: 3.2rem;
+    background: var(--border);
+    z-index: -1;
+
 }
 .archive-count,
 .archive-meta {
