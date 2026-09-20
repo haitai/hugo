@@ -357,3 +357,37 @@ function stopDragging(event) {
 tip.addEventListener('pointerup', stopDragging);
 tip.addEventListener('pointercancel', stopDragging);
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // 延迟一小会儿执行，确保 PaperMod 自身的代码高亮和复制按钮渲染完毕
+    setTimeout(() => {
+        document.querySelectorAll(".md-content .highlight").forEach((block) => {
+            // 获取实际的代码包裹元素，通常是 pre 或 code
+            const codeElement = block.querySelector("pre");
+            if (!codeElement) return;
+
+            // 如果代码块实际高度大于我们设定的限制高度（400px）
+            if (codeElement.scrollHeight > 200) {
+                // 创建切换按钮
+                let btn = document.createElement("button");
+                btn.innerText = "展开";
+                btn.className = "code-fold-btn";
+                
+                btn.onclick = function() {
+                    if (block.classList.contains("expanded")) {
+                        block.classList.remove("expanded");
+                        btn.innerText = "展开";
+                        // 顺滑滚动回代码块顶部，防止收起时视觉丢失
+                        block.scrollIntoView({ behavior: "smooth", block: "nearest" });
+                    } else {
+                        block.classList.add("expanded");
+                        btn.innerText = "折叠";
+                    }
+                };
+                block.appendChild(btn);
+            }
+        });
+    }, 100);
+});
+
+</script>

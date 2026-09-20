@@ -18,3 +18,55 @@
 .chroma .hl{
   background-color: rgba(248, 81, 73, 0.12);
 }
+
+/* 限制代码块的最大高度，超出则隐藏并定位 */
+.md-content .highlight {
+    max-height: 200px; /* 默认最大高度，可自行修改 */
+    overflow: hidden;
+    position: relative;
+    transition: max-height 0.3s ease;
+    padding-bottom: 30px; /* 留出底部放按钮的空间 */
+}
+
+/* 展开后的状态 */
+.md-content .highlight.expanded {
+    max-height: none;
+}
+
+/* 折叠时在底部生成一层白色/暗色渐变遮罩 */
+.md-content .highlight:not(.expanded)::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    /* 通过 PaperMod 原生变量自动适配白天/黑夜模式 */
+    background: linear-gradient(transparent, var(--theme)); 
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* 自定义展开/收起按钮的样式 */
+.code-fold-btn {
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--code-bg);
+    color: var(--content);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 3px 12px;
+    font-size: 12px;
+    cursor: pointer;
+    line-height: 1.2;
+    z-index: 2;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.code-fold-btn:hover {
+    opacity: 1;
+    background: var(--border);
+}

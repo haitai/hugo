@@ -1,8 +1,8 @@
 ---
 title: "Hello World"
 slug: "hello-world"
-#description: ""
-#summary: ""
+description: "这是一篇包含本主题支持的各种基本 Markdown 语法的文章。"
+#summary: "这是一篇包含本主题支持的各种基本 Markdown 语法的文章。"
 date: 2026-09-05T14:26:48+08:00
 #lastmod: 2026-09-05T14:26:48+08:00
 type: post
@@ -16,7 +16,7 @@ cover:
   caption: "图片说明文字" # 图片下方的说明（可选）
   relative: true # 如果你使用的是绝对路径或 static 目录，设为 false
 ---
-这是一篇包含本主题支持的各种基本 Markdown 语法的文章。
+
 
 <!--more-->
 
