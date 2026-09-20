@@ -165,7 +165,7 @@
 
 @media (min-width: 720px) {
     .resize_box {
-      padding: 2px 0;
+      padding: 1px 0;
       width: 100%;
       position: relative;
       margin: 0 auto;
@@ -174,9 +174,9 @@
 
       .resize_length {
           width: 100%;
-          height: 4px;
+          height: 2px;
           background: var(--border);
-          border-radius: 2px;
+          border-radius: 1px;
           cursor: auto;
         }
       .resize_tip {
@@ -192,10 +192,10 @@
         }
       .resize_light {
           position: absolute;
-          height: 4px;
+          height: 2px;
           top: 50%;
           transform: translateY(-50%);
-          background-color: aqua;
+          background-color: var(--primary);
           cursor: auto;
         }
     }
