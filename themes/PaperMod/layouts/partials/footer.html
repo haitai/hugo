@@ -368,6 +368,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             // 如果代码块实际高度大于我们设定的限制高度（400px）
             if (codeElement.scrollHeight > 200) {
+                block.classList.add("expandable")
                 // 创建切换按钮
                 let btn = document.createElement("button");
                 btn.innerText = "展开";

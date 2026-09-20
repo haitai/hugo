@@ -20,7 +20,7 @@
 }
 
 /* 限制代码块的最大高度，超出则隐藏并定位 */
-.md-content .highlight {
+.md-content .highlight.expandable {
     max-height: 200px; /* 默认最大高度，可自行修改 */
     overflow: hidden;
     position: relative;
@@ -34,7 +34,7 @@
 }
 
 /* 折叠时在底部生成一层白色/暗色渐变遮罩 */
-.md-content .highlight:not(.expanded)::after {
+.md-content .highlight.expandable:not(.expanded)::after {
     content: "";
     position: absolute;
     bottom: 0;
