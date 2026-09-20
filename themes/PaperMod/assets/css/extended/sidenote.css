@@ -1,12 +1,15 @@
 body {
   counter-reset: sidenote-counter;
 }
+
 .sidenote-number {
-    display: none;
-    @media (min-width: 960px) {
-        display: inline;
-        counter-increment: sidenote-counter;
-    }   
+  counter-increment: sidenote-counter;
+}
+.sidenote-number::before {
+  content: counter(sidenote-counter);;
+  vertical-align: super;
+  font-size: 0.8em;
+  font-weight: 700;
 }
 .sidenote {
   float: right;
@@ -18,22 +21,39 @@ body {
   border-radius: var(--radius);
 }
 .sidenote::before {
-  content: counter(sidenote-counter);
+  content: counter(sidenote-counter);;
   position: relative;
   font-size: 0.9em;
   font-weight: 700;
   vertical-align: super;
   margin-right: 0.25rem
 }
-.sidenote-number::after {
-  content: counter(sidenote-counter);
-  vertical-align: super;
-  font-size: 0.8em;
-  font-weight: 700;
-}
+
 .sidenote-number:hover .sidenote {
   background-color: var(--code-bg);
 }
+
+@media (max-width: 960px) {
+  .sidenote {
+    float: none;
+    clear: none;
+    margin-right: 0;
+  }
+  .sidenote::before {
+    content: " (";
+    vertical-align:unset;
+    font-size: 1em;
+    font-weight: 400;
+    margin-right:0;
+  }
+  .sidenote::after {
+    content: ") ";
+  } 
+  .sidenote-number::before {
+    display: none;
+    vertical-align:unset;
+  } 
+} 
 
 #ex-footnote {
   position: fixed;
