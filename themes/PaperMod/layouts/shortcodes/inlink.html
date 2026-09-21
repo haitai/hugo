@@ -1,7 +1,7 @@
 {{$URL := .Get 0}}
 {{- with .Site.GetPage $URL }}
 <div class="post-preview">
-  <a target="_blank" href="{{ .Permalink }}" class="post-preview-a">
+  <a href="{{ .Permalink }}" class="post-preview-a">
     <div class="post-preview-meta">
       <div class="post-preview-middle">
         {{- if eq .Type "status" -}}

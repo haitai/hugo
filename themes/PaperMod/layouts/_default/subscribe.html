@@ -63,5 +63,14 @@
         });
             container.appendChild(copybutton);
     });
+
+    const hrefs = ['/pretty-feed-v3.js','/html.js'];
+    for (i = 0; i < hrefs.length; i++) {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.href =  hrefs[i];
+        link.as = 'script';
+        document.head.appendChild(link);
+    };    
 </script>
 {{- end }}{{/* end main */}}
