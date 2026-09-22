@@ -6,10 +6,9 @@ body {
   counter-increment: sidenote-counter;
 }
 .sidenote-number::before {
-  content: counter(sidenote-counter);;
+  content: "(" counter(sidenote-counter) ")";
   vertical-align: super;
   font-size: 0.8em;
-  font-weight: 700;
 }
 .sidenote {
   float: right;
@@ -21,10 +20,9 @@ body {
   border-radius: var(--radius);
 }
 .sidenote::before {
-  content: counter(sidenote-counter);;
+  content: "(" counter(sidenote-counter) ")";
   position: relative;
   font-size: 0.9em;
-  font-weight: 700;
   vertical-align: super;
   margin-right: 0.25rem
 }
@@ -55,6 +53,13 @@ body {
   } 
 } 
 
+a.footnote-ref::before {
+    content: '[';
+}
+
+a.footnote-ref::after {
+    content: ']';
+}
 #ex-footnote {
   position: fixed;
   font-size: 0.9em;
