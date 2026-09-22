@@ -6,9 +6,10 @@ body {
   counter-increment: sidenote-counter;
 }
 .sidenote-number::before {
-  content: "(" counter(sidenote-counter) ")";
+  content: counter(sidenote-counter);
   vertical-align: super;
-  font-size: 0.8em;
+  display: inline-block;
+
 }
 .sidenote {
   float: right;
@@ -20,15 +21,26 @@ body {
   border-radius: var(--radius);
 }
 .sidenote::before {
-  content: "(" counter(sidenote-counter) ")";
+  content: counter(sidenote-counter);
   position: relative;
   font-size: 0.9em;
   vertical-align: super;
-  margin-right: 0.25rem
+  margin-right: 0.25rem;
+  display: inline-block;
 }
 
 .sidenote-number:hover .sidenote {
   background-color: var(--code-bg);
+}
+
+a.footnote-ref,.sidenote-number::before,.sidenote::before {
+    width: 15px;
+    height: 15px;
+    background: var(--primary);
+    color: var(--theme);
+    text-align: center;
+    line-height: 15px;
+    font-size: 11px;
 }
 
 @media (max-width: 960px) {
@@ -43,6 +55,9 @@ body {
     font-size: 1em;
     font-weight: 400;
     margin-right:0;
+    width: auto;
+    background: inherit;
+    color: inherit;
   }
   .sidenote::after {
     content: ") ";
@@ -53,13 +68,15 @@ body {
   } 
 } 
 
-a.footnote-ref::before {
-    content: '[';
+a.footnote-ref{
+  border-radius: 50%;
+  display: inline-block;
 }
 
-a.footnote-ref::after {
-    content: ']';
+.footnotes {
+  font-size: 0.9rem;
 }
+
 #ex-footnote {
   position: fixed;
   font-size: 0.9em;
