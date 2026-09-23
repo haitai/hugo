@@ -261,7 +261,7 @@ window.addEventListener("load", function () {
             event.preventDefault();
             footnotePopupShown = true;
             const index = fnRef.hash.substring(4);
-            popupIndex.innerHTML = index + ".";
+            popupIndex.innerHTML = index;
             const footnote = document.getElementById("fn:" + index).cloneNode(true);
             const backrefElement = footnote.querySelector(".footnote-backref");
             backrefElement.parentNode.removeChild(backrefElement);

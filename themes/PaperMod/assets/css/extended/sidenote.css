@@ -33,7 +33,7 @@ body {
   background-color: var(--code-bg);
 }
 
-a.footnote-ref,.sidenote-number::before,.sidenote::before {
+a.footnote-ref,.sidenote-number::before,.sidenote::before,#popup-index {
     width: 15px;
     height: 15px;
     background: var(--primary);
@@ -143,6 +143,7 @@ a.footnote-ref{
 }
 
 #popup-index {
-  padding: 0 0 0 1rem;
-  flex-shrink: 0;
+  align-self: center;
+  border-radius: 50%;
+  margin-right: 0.5em;
 }
