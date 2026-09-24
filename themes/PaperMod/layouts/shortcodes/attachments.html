@@ -11,8 +11,8 @@
       {{- if $hasPattern -}}{{- $include = findRE ($.Get "pattern") .Name -}}{{- end -}}
       {{- if $include -}}
       <li>
-        <a class="tooltipped tooltipped-n" aria-label="Download" href="{{ ($.Page.Resources.GetMatch (path.Join $folderName .Name)).RelPermalink }}" download>{{- .Name | markdownify -}} {{ partial "svg.html" (dict "name" "extra_link") }}</a>
-        <a class="new-tab tooltipped tooltipped-n" aria-label="Open in new tab" href="{{ ($.Page.Resources.GetMatch (path.Join $folderName .Name)).RelPermalink }}" target="_blank"></a>
+        <a class="tooltipped" aria-label="{{- T "download" | default "Download" -}}" href="{{ ($.Page.Resources.GetMatch (path.Join $folderName .Name)).RelPermalink }}" download>{{- .Name | markdownify -}}</a>
+        <a class="new-tab tooltipped" aria-label="{{- T "newtab" | default "Open in new tab" -}}" href="{{ ($.Page.Resources.GetMatch (path.Join $folderName .Name)).RelPermalink }}" target="_blank">{{ partial "svg.html" (dict "name" "extra_link") }}</a>
         <div class="attachment-size">({{- if le .Size 1024 -}}{{- .Size -}} b{{- else -}}{{- div .Size 1024 -}}kb{{- end -}})</div>
       </li>
       {{- end -}}

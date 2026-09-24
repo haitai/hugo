@@ -108,3 +108,7 @@
   translation: '最后更新'
 - id: attachments
   translation: '附件'
+- id: download
+  translation: '下载'
+- id: newtab
+  translation: '在新窗口中打开'

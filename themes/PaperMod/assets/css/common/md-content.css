@@ -43,6 +43,68 @@
     box-shadow: 0 -1px 0 var(--primary) inset;
 }
 
+.tooltipped{
+    position:relative
+}
+.tooltipped::after{
+    position:absolute;
+    z-index:1000000;
+    display:none;
+    padding:.5em .75em;
+    font-size:11px;
+    color:var(--theme);
+    text-align:center;
+    text-decoration:none;
+    text-shadow:none;
+    text-transform:none;
+    letter-spacing:normal;
+    word-wrap:break-word;
+    white-space:pre;
+    pointer-events:none;
+    content:attr(aria-label);
+    background:var(--primary);;
+    border-radius:.25rem;
+    opacity:0;
+    right:50%;
+    bottom:100%;
+    margin-bottom:6px;
+    transform:translateX(50%)
+}
+.tooltipped::before{
+    position:absolute;
+    z-index:1000001;
+    display:none;
+    width:0;
+    height:0;
+    color:var(--primary);
+    pointer-events:none;
+    content:"";
+    border:6px solid transparent;
+    opacity:0;
+    top:-7px;
+    right:50%;
+    bottom:auto;
+    margin-right:-6px;
+    border-top-color:var(--primary);
+}
+@keyframes tooltip-appear{
+    from{opacity:0}to{opacity:1}
+}
+.tooltipped:hover::before,
+.tooltipped:hover::after,
+.tooltipped:active::before,
+.tooltipped:active::after,
+.tooltipped:focus::before,
+.tooltipped:focus::after{
+    display:inline-block;
+    text-decoration:none;
+    animation-name:tooltip-appear;
+    animation-duration:.1s;
+    animation-fill-mode:forwards;
+    animation-timing-function:ease-in;
+    animation-delay:.4s
+}
+
 .md-content del {
     text-decoration: line-through;
 }

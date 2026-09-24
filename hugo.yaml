@@ -182,6 +182,9 @@ params:
     - name: rss
       title: 订阅
       url: "/subscribe/"
+    #- name: email
+    #  title: 电子邮件
+    #  url: "mailto:hello@huhaitai.com"
     #- name: github
     #  title: View Source on Github
     #  url: "https://github.com/haitai/hugo"
@@ -191,9 +194,7 @@ params:
     #- name: X
     #  title: Share PaperMod on X/Twitter
     #  url: "https://x.com/intent/tweet/?text=Checkout%20Hugo%20PaperMod%20%E2%9C%A8%0AA%20fast,%20clean,%20responsive%20Hugo%20theme.&url=https://github.com/adityatelange/hugo-PaperMod&hashtags=Hugo,PaperMod"
-    #- name: KoFi
-    #  title: Buy me a Ko-Fi :)
-    #  url: "https://ko-fi.com/adityatelange"
+
 
   editPost:
     #URL: "https://github.com/haitai/hugo/tree/master/content"
