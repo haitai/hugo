@@ -24,3 +24,11 @@
   transition: opacity 1.0s ease, transform 0.5s ease;
   transition-delay: 0.3s; // To not accidentally reveal the spoiler when hovering over the page
 }
+.blur {
+  filter: blur(5px);
+  transition: filter 0.3s;
+}
+
+.blur:hover {
+  filter: none;
+}

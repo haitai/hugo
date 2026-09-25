@@ -36,7 +36,7 @@ cover:
 
 这是一个普通段落，可以包含**粗体文本**、*斜体文本*、***粗斜体文本***、~~删除线~~、`行内代码`和[链接文本](https://example.com)。
 
-这是另一个段落，用于{{< inlinespoiler >}}测试{{</ inlinespoiler >}}段落之间的间距。
+这是另一个段落，用于{{< inlinespoiler >}}测试{{</ inlinespoiler >}}段落{{< blur "之间的" >}}间距。
 
 ## 图片
 
