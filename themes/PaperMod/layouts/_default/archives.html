@@ -44,7 +44,7 @@
     {{- with $rss }}
     <a href="{{ .RelPermalink }}" title="RSS" aria-label="RSS">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" height="23">
+        stroke-linecap="round" stroke-linejoin="round" height="28">
         <path d="M4 11a9 9 0 0 1 9 9" />
         <path d="M4 4a16 16 0 0 1 16 16" />
         <circle cx="5" cy="19" r="1" />
@@ -67,7 +67,7 @@
             {{ $key := $name | urlize }}
             {{ with index $serCounts $key }}
             <li>
-              <a href="/series/{{ $name }}">{{ $name }} <sup><strong><sup>{{ . }}</sup></strong></sup></a>
+              <a href="/series/{{ $name }}">{{ $name }} <span class="terms-count">{{ . }}</span></a>
             </li>
             {{ end }}
         {{ end }}
@@ -82,7 +82,7 @@
             {{ $key := $name | urlize }}
             {{ with index $catCounts $key }}
             <li>
-              <a href="/categories/{{ $name }}">{{ $name }} <sup><strong><sup>{{ . }}</sup></strong></sup></a>
+              <a href="/categories/{{ $name }}">{{ $name }} <span class="terms-count">{{ . }}</span></a>
             </li>
             {{ end }}
         {{ end }}
@@ -97,7 +97,7 @@
             {{ $key := $name | urlize }}
             {{ with index $tagCounts $key }}
             <li>
-              <a href="/tags/{{ $name }}">{{ $name }} <sup><strong><sup>{{ . }}</sup></strong></sup></a>
+              <a href="/tags/{{ $name }}">{{ $name }} <span class="terms-count">{{ . }}</span></a>
             </li>
             {{ end }}
         {{ end }}

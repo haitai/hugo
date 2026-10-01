@@ -33,7 +33,7 @@
     {{- $count := .Count }}
     {{- with site.GetPage (printf "/%s/%s" $type $name) }}
     <li>
-        <a href="{{ .Permalink }}">{{ .LinkTitle }} <sup><strong>{{ $count }}</strong></sup> </a>
+        <a href="{{ .Permalink }}">{{ .LinkTitle }} <span class="terms-count">{{ $count }}</span></a>
     </li>
     {{- end }}
     {{- end }}

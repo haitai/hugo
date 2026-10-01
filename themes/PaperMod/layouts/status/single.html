@@ -3,34 +3,37 @@
 <article class="post-single status-single">
   <header class="post-header">
   {{- partial "breadcrumbs.html" . }}
+  <div class="woo-box">
+    <div class="woo-avatar">
+      <img src="{{- site.Params.status_avatar }}" class="woo-avatar-img">
+    </div>
+
+    <div class="woo-info">
+      <div class="woo-author">
+        <span title="{{- site.Params.author }}">{{- site.Params.author }}</span>
+      </div>
+      <div class="woo-time post-meta">
+        <a class="_time_" title="{{- .Date }}" href="{{- .Permalink -}}">{{- .Date | time.Format site.Params.timeFormat -}}</a>
+      </div>
+    </div>
+  </div>
   </header>
-
-<div class="woo-box">
-  <div class="woo-avatar">
-    <img src="{{- site.Params.status_avatar }}" class="woo-avatar-img">
-  </div>
-
-  <div class="woo-info">
-    <div class="woo-author">
-      <span title="{{- site.Params.author }}">{{- site.Params.author }}</span>
-    </div>
-    <div class="woo-time post-meta">
-      <a class="_time_" title="" href="{{- .Permalink -}}">{{- .Date | time.Format site.Params.timeFormat -}}</a>
-    </div>
-  </div>
-</div>
 
   {{- if .Content }}
   <div class="md-content status-content">
     {{- if not (.Param "disableAnchoredHeadings") }}
     {{- partial "anchored_headings.html" .Content -}}
-    {{- else }}{{ .Content }}{{ end }} {{- range ($.GetTerms "tags") }}
-      <a href="{{ .Permalink }}" class="status-tag-a">#{{ .LinkTitle }}</a>{{- end }}
+    {{- else }}{{ .Content }}{{ end }} 
   </div>
   {{- end }}
-
     
   <footer class="post-footer">
+    {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
+    <div class="status-tags">
+    {{- range ($.GetTerms "tags") }}
+      <a href="{{ .Permalink }}" class="status-tag-a">#{{ .LinkTitle }}</a>
+    {{- end }}
+    </div>
     {{ partial "backlinks.html" . }}
   </footer>
 </article>

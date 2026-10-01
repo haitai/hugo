@@ -1,18 +1,19 @@
 .terms-tags li {
     display: inline-block;
-    margin: 10px 20px 10px 0;
-    font-weight: 500;
+    margin: 10px 10px 10px 0;
+
 }
 
 .terms-tags a {
     display: block;
-    padding: 3px 10px;
-    background: var(--tertiary);
-    border-radius: 6px;
+    padding: 0px 10px;
+    border: 1px solid var(--tertiary);
+    border-radius: 999px;
     transition: transform 0.1s;
 }
 
-.terms-tags a:active {
+
+.terms-tags a:active,.terms-tags a:hover {
     background: var(--tertiary);
     transform: scale(0.96);
 }

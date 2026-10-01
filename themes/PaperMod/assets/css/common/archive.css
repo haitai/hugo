@@ -41,15 +41,20 @@
 }
 
 .archive-month-header {
-    background-color: var(--tertiary);
+    background-color: var(--code-bg);
     background-image: none;
     left: 1.8rem;
     padding: 3px 10px;
-    border-radius: var(--radius);
+    border: 2px solid var(--border);
+    border-radius: 999px;
     line-height: 2;
     transform: translate(-50%, -50%) scale(.75);
     margin-top: 20px;
     position: absolute;
+}
+
+[data-theme=dark] .archive-month-header {
+    background-color: var(--theme);
 }
 
 .archive-month:not(:last-of-type) {

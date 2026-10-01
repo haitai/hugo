@@ -24,7 +24,7 @@
     margin-top: 0.3rem;
     font-size: 16px;
 }
-.status-content .status-tag-a{box-shadow:none;margin-right: 5px}
+.status-tag-a{box-shadow:none;margin-right: 10px}
 .woo-box{display: flex;}
 .woo-avatar{width: 3.25rem;height: 3.25rem;margin-right:10px}
 .woo-avatar-img{border-radius: 50%}

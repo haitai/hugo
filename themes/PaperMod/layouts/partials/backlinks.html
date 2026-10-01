@@ -2,14 +2,14 @@
 {{- $backlinks := site.Home.Store.Get "backlinks" | uniq  }}
 {{- with (where $backlinks "target" .RelPermalink) }}
   <div class="backlinks">
-    <div class="backlinks-title">
-      {{ T "backlinks_title" }}
-    </div>
-    <ol>
-      {{- range (sort . "source.linkTitle" "asc") }}
-        <li><a href="{{ .source.relPermalink }}">{{ .source.linkTitle }}</a></li>
-      {{- end }}
-    </ol>
+    <details class="backlinks-title">
+      <summary>{{ T "backlinks_title" }}</summary>
+      <ol>
+        {{- range (sort . "source.linkTitle" "asc") }}
+          <li><a href="{{ .source.relPermalink }}">{{ .source.linkTitle }}</a></li>
+        {{- end }}
+      </ol>
+    </details>
   </div>
 {{- end }}
 {{- if $debug }}

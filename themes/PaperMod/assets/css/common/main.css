@@ -35,7 +35,11 @@ body {
 }
 
 .page-header h1 {
-    font-size: 40px;
+    font-size: 28px;
+}
+
+.page-header h1 svg{
+    vertical-align: text-top;
 }
 
 .pagination {

@@ -5,7 +5,8 @@
 
 .post-title {
     margin-bottom: 2px;
-    font-size: 40px;
+    font-size: 28px;
+    font-weight: 400;
 }
 
 .post-description {
@@ -125,11 +126,11 @@
 
 .post-tags a {
     display: block;
-    padding: 0 14px;
+    padding: 0 10px;
     color: var(--secondary);
     font-size: 14px;
-    line-height: 34px;
-    background: var(--code-bg);
+    border-radius: 999px;
+    background: none;
 }
 
 .post-tags a:hover,
