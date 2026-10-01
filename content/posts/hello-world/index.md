@@ -268,6 +268,8 @@ async function fetchUser(id) {
 ## 其他格式 — 属性, 下标, 上标, 键盘, 高亮
 <abbr title="Graphics Interchange Format">GIF</abbr> 是一种图片格式。
 
+优秀的作家总是会仔细检查<u title="拼写">拚写</u>问题。
+
 H<sub>2</sub>O 是水的化学分子式。
 
 E = mc<sup>2</sup> 是爱因斯坦的质能方程。

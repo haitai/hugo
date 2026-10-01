@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+::selection {
+  background-color: mark; /* 选中的背景色 */
+  color: marktext;           /* 选中的文字颜色 */
+}
+
 html {
     -webkit-tap-highlight-color: transparent;
     overflow-y: scroll;
@@ -116,4 +121,23 @@ textarea:-webkit-autofill {
 img {
     display: block;
     max-width: 100%;
+}
+
+kbd {
+    display: inline-block;
+    font-size: 0.85em;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0px;
+    padding: 0.3em 0.4em;
+    border-width: 1px;
+    border-radius: 0.25rem;
+    border-style: solid;
+}
+u {
+    text-decoration-line: underline;
+    --un-line-opacity: 1;
+    text-decoration-color: rgb(248 113 113 / var(--un-line-opacity));
+    text-underline-offset: 0.25em;
+    text-decoration-style: wavy;
 }

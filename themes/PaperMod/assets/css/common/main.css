@@ -36,10 +36,14 @@ body {
 
 .page-header h1 {
     font-size: 28px;
+    position: relative;
 }
 
 .page-header h1 svg{
-    vertical-align: text-top;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 0.5rem;
 }
 
 .pagination {
