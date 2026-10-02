@@ -1,5 +1,11 @@
 <meta property="og:url" content="{{ .Permalink }}">
 
+{{- if eq .Type "status" -}}
+<meta property="og:logo" content="/avatar.png" />
+{{- else }}
+<meta property="og:logo" content="/favicon.png" />
+{{- end }}
+
 {{- with or site.Title site.Params.title | plainify }}
   <meta property="og:site_name" content="{{ . }}">
 {{- end }}
