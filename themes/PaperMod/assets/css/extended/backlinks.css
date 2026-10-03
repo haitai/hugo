@@ -2,7 +2,13 @@
     font-size: small;
     color: var(--secondary);
 }
+.backlinks-title summary{
+    cursor: pointer;
+}
 .backlinks ol{
     padding-inline-start: 14px;
     margin: 0;
+}
+.backlinks ol li{
+    padding-top: 10px;
 }

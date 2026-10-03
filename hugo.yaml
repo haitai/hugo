@@ -146,7 +146,7 @@ params:
   hideAuthor: true
   # disableSpecial1stPost: true
   displayFullLangName: true
-  ShowPostNavLinks: false
+  ShowPostNavLinks: true
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
   ShowRssButtonInSectionTermList: true
